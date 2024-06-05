@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/root/xkyin/TIK/nttTIK/include/head.cpp" "CMakeFiles/main.dir/include/head.cpp.o" "gcc" "CMakeFiles/main.dir/include/head.cpp.o.d"
-  "/root/xkyin/TIK/nttTIK/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/src/main.cpp.o.d"
+  "/root/xkyin/TIK/AscendTikNTT/include/head.cpp" "CMakeFiles/main.dir/include/head.cpp.o" "gcc" "CMakeFiles/main.dir/include/head.cpp.o.d"
+  "/root/xkyin/TIK/AscendTikNTT/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links.

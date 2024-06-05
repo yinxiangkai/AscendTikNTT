@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/xkyin/TIK/nttTIK
+CMAKE_SOURCE_DIR = /root/xkyin/TIK/AscendTikNTT
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/xkyin/TIK/nttTIK/build
+CMAKE_BINARY_DIR = /root/xkyin/TIK/AscendTikNTT/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/xkyin/TIK/nttTIK/build/CMakeFiles /root/xkyin/TIK/nttTIK/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/xkyin/TIK/AscendTikNTT/build/CMakeFiles /root/xkyin/TIK/AscendTikNTT/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/xkyin/TIK/nttTIK/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/xkyin/TIK/AscendTikNTT/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,6 +129,19 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+#=============================================================================
+# Target rules for targets named baseline_cpu
+
+# Build rule for target.
+baseline_cpu: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 baseline_cpu
+.PHONY : baseline_cpu
+
+# fast build rule for target.
+baseline_cpu/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/baseline_cpu.dir/build.make CMakeFiles/baseline_cpu.dir/build
+.PHONY : baseline_cpu/fast
+
 include/head.o: include/head.cpp.o
 .PHONY : include/head.o
 
@@ -152,6 +165,30 @@ include/head.s: include/head.cpp.s
 include/head.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/include/head.cpp.s
 .PHONY : include/head.cpp.s
+
+src/baseline_cpu.o: src/baseline_cpu.cpp.o
+.PHONY : src/baseline_cpu.o
+
+# target to build an object file
+src/baseline_cpu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/baseline_cpu.dir/build.make CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.o
+.PHONY : src/baseline_cpu.cpp.o
+
+src/baseline_cpu.i: src/baseline_cpu.cpp.i
+.PHONY : src/baseline_cpu.i
+
+# target to preprocess a source file
+src/baseline_cpu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/baseline_cpu.dir/build.make CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.i
+.PHONY : src/baseline_cpu.cpp.i
+
+src/baseline_cpu.s: src/baseline_cpu.cpp.s
+.PHONY : src/baseline_cpu.s
+
+# target to generate assembly for a file
+src/baseline_cpu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/baseline_cpu.dir/build.make CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.s
+.PHONY : src/baseline_cpu.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -185,10 +222,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... baseline_cpu"
 	@echo "... main"
 	@echo "... include/head.o"
 	@echo "... include/head.i"
 	@echo "... include/head.s"
+	@echo "... src/baseline_cpu.o"
+	@echo "... src/baseline_cpu.i"
+	@echo "... src/baseline_cpu.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

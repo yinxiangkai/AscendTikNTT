@@ -1,5 +1,6 @@
-CMakeFiles/main.dir/src/main.cpp.o: /root/xkyin/TIK/nttTIK/src/main.cpp \
-  /root/xkyin/TIK/nttTIK/src/../include/head.h \
+CMakeFiles/main.dir/src/main.cpp.o: \
+  /root/xkyin/TIK/AscendTikNTT/src/main.cpp \
+  /root/xkyin/TIK/AscendTikNTT/src/../include/head.h \
   /usr/local/Ascend/ascend-toolkit/latest/include/acl/acl.h \
   /usr/local/Ascend/ascend-toolkit/latest/include/acl/acl_rt.h \
   /usr/lib/llvm-14/lib/clang/14.0.0/include/stdint.h \
@@ -25,17 +26,17 @@ CMakeFiles/main.dir/src/main.cpp.o: /root/xkyin/TIK/nttTIK/src/main.cpp \
   /usr/local/Ascend/ascend-toolkit/latest/include/acl/error_codes/ge_error_codes.h \
   /usr/local/Ascend/ascend-toolkit/latest/include/acl/acl_op.h \
   /usr/local/Ascend/ascend-toolkit/latest/include/acl/acl_mdl.h \
-  /root/xkyin/TIK/nttTIK/include/runtime/rt.h \
-  /root/xkyin/TIK/nttTIK/include/runtime/base.h \
-  /root/xkyin/TIK/nttTIK/include/runtime/config.h \
-  /root/xkyin/TIK/nttTIK/include/runtime/context.h \
-  /root/xkyin/TIK/nttTIK/include/runtime/dev.h \
-  /root/xkyin/TIK/nttTIK/include/runtime/dvfsprofile.h \
-  /root/xkyin/TIK/nttTIK/include/runtime/event.h \
-  /root/xkyin/TIK/nttTIK/include/runtime/kernel.h \
-  /root/xkyin/TIK/nttTIK/include/runtime/stream.h \
-  /root/xkyin/TIK/nttTIK/include/runtime/mem.h \
-  /root/xkyin/TIK/nttTIK/include/runtime/rt_model.h \
+  /root/xkyin/TIK/AscendTikNTT/include/runtime/rt.h \
+  /root/xkyin/TIK/AscendTikNTT/include/runtime/base.h \
+  /root/xkyin/TIK/AscendTikNTT/include/runtime/config.h \
+  /root/xkyin/TIK/AscendTikNTT/include/runtime/context.h \
+  /root/xkyin/TIK/AscendTikNTT/include/runtime/dev.h \
+  /root/xkyin/TIK/AscendTikNTT/include/runtime/dvfsprofile.h \
+  /root/xkyin/TIK/AscendTikNTT/include/runtime/event.h \
+  /root/xkyin/TIK/AscendTikNTT/include/runtime/kernel.h \
+  /root/xkyin/TIK/AscendTikNTT/include/runtime/stream.h \
+  /root/xkyin/TIK/AscendTikNTT/include/runtime/mem.h \
+  /root/xkyin/TIK/AscendTikNTT/include/runtime/rt_model.h \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/fstream \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/istream \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/ios \

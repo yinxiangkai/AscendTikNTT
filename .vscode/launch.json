@@ -6,7 +6,7 @@
       "name": "CMake Launch",
       "type": "lldb",
       "request": "launch",
-      "program": "${workspaceFolder}/build/addACL",
+      "program": "${workspaceFolder}/out/${fileBasename}",
       "args": [],
       "cwd": "${workspaceFolder}",
       "preLaunchTask": "build-project"

@@ -1,0 +1,21 @@
+{
+    "binFileName":"ntt_matrix",
+    "binFileSuffix":".o",
+    "blockDim":1,
+    "coreType":"AiCore",
+    "deterministic":"ignore",
+    "kernelName":"ntt_matrix__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF_AICUBE",
+    "memoryStamping":[
+        0
+    ],
+    "opParaSize":0,
+    "parameters":[
+        null,
+        null,
+        null,
+        null,
+        null
+    ],
+    "sha256":"e018d52d8f6c120eb01a910100500a042976d4f7f997e2febc1c07006a109b15"
+}

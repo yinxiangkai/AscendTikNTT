@@ -1,0 +1,15 @@
+#ifdef __CCE_KT_TEST__
+#define __aicore__ 
+#else
+#define __aicore__ [aicore]
+#endif
+
+extern "C" __global__ __aicore__ void ntt_matrix__kernel0(__gm__ int8_t* __restrict__ data_input_gm, __gm__ int8_t* __restrict__ prime_gm, __gm__ int8_t* __restrict__ power_table_gm, __gm__ int8_t* __restrict__ data_output_gm, int32_t size) {
+set_atomic_none();
+// "aicore arch: Ascend310B"
+  return;
+  pipe_barrier(PIPE_ALL);
+
+}
+
+// ccec -c -O2 /root/xkyin/TIK/AscendTikNTT/kernel_meta/ntt_matrix.cce --cce-aicore-arch=dav-m300 --cce-aicore-only -o ./kernel_meta/ntt_matrix.o -mllvm -cce-aicore-function-stack-size=16000 -mllvm -cce-aicore-addr-transform -mllvm --cce-aicore-or-combine=false -mllvm -instcombine-code-sinking=false -Xclang -fcce-vf-vl=256 --cce-auto-sync=off -mllvm -cce-aicore-jump-expand=false -mllvm -cce-aicore-mask-opt=false

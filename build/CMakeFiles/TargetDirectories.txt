@@ -1,3 +1,4 @@
-/root/xkyin/TIK/nttTIK/build/CMakeFiles/main.dir
-/root/xkyin/TIK/nttTIK/build/CMakeFiles/edit_cache.dir
-/root/xkyin/TIK/nttTIK/build/CMakeFiles/rebuild_cache.dir
+/root/xkyin/TIK/AscendTikNTT/build/CMakeFiles/main.dir
+/root/xkyin/TIK/AscendTikNTT/build/CMakeFiles/baseline_cpu.dir
+/root/xkyin/TIK/AscendTikNTT/build/CMakeFiles/edit_cache.dir
+/root/xkyin/TIK/AscendTikNTT/build/CMakeFiles/rebuild_cache.dir

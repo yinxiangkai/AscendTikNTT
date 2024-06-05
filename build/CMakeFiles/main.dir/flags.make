@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/root/xkyin/TIK/nttTIK/include -I/usr/local/Ascend/ascend-toolkit/latest/include
+CXX_INCLUDES = -I/root/xkyin/TIK/AscendTikNTT/include -I/usr/local/Ascend/ascend-toolkit/latest/include
 
 CXX_FLAGS = -g
 
