@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+   
+    {
+      "name": "CMake Launch",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/addACL",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "build-project"
+    },
+   
+  ]
+}

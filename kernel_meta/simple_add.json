@@ -1,0 +1,19 @@
+{
+    "binFileName":"simple_add",
+    "binFileSuffix":".o",
+    "blockDim":1,
+    "coreType":"VectorCore",
+    "deterministic":"ignore",
+    "kernelName":"simple_add__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF_AIVEC",
+    "memoryStamping":[
+        0
+    ],
+    "opParaSize":0,
+    "parameters":[
+        null,
+        null,
+        null
+    ],
+    "sha256":"93626fa73ea733cc6bdd7cba262a77ffc529f9bb39d891aae02ffda9295394be"
+}

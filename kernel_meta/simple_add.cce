@@ -1,0 +1,43 @@
+__attribute__((always_inline)) inline [aicore] void vf_wrapper_simple_add_0(__ubuf__ void* data_A_ub, __ubuf__ void* data_B_ub, __ubuf__ void* data_C_ub) {
+__VEC_SCOPE__ {
+  vector_f32 vreg_29;
+  vector_f32 vreg_27;
+  vector_f32 vreg_25;
+  vector_bool preg_20;
+  preg_20 = pge_b8(PAT_ALL);
+  for (uint16_t iter_r_o = 0; iter_r_o < 2; ++iter_r_o) {
+    vector_address areg_24 = vag_b32(64);
+    vld(vreg_25, ((__ubuf__ float *)data_A_ub), areg_24, NORM);
+    vld(vreg_27, ((__ubuf__ float *)data_B_ub), areg_24, NORM);
+    vadd(vreg_29, vreg_25, vreg_27, preg_20, MODE_ZEROING);
+    vst(vreg_29, ((__ubuf__ float *)data_C_ub), areg_24, NORM_B32, preg_20);
+  }
+}
+}
+
+#ifdef __CCE_KT_TEST__
+#define __aicore__ 
+#else
+#define __aicore__ [aicore]
+#endif
+
+extern "C" __global__ __aicore__ void simple_add__kernel0(__gm__ float* __restrict__ data_A, __gm__ float* __restrict__ data_B, __gm__ float* __restrict__ data_C) {
+set_atomic_none();
+__ubuf__   float* data_A_ub = (__ubuf__  float *)get_imm(0);
+__ubuf__   float* data_B_ub = (__ubuf__  float *)get_imm(512);
+__ubuf__   float* data_C_ub = (__ubuf__  float *)get_imm(1024);
+// "aicore arch: Ascend310B"
+  copy_gm_to_ubuf(((__ubuf__ float *)data_A_ub), ((__gm__ float *)data_A), 0, 1, 16, 0, 0);
+  copy_gm_to_ubuf(((__ubuf__ float *)data_B_ub), ((__gm__ float *)data_B), 0, 1, 16, 0, 0);
+  set_flag(PIPE_MTE2, PIPE_V, EVENT_ID0);
+  wait_flag(PIPE_MTE2, PIPE_V, EVENT_ID0);
+  vf_wrapper_simple_add_0(((__ubuf__ float *)data_A_ub), ((__ubuf__ float *)data_B_ub), ((__ubuf__ float *)data_C_ub));
+  set_flag(PIPE_V, PIPE_MTE3, EVENT_ID0);
+  wait_flag(PIPE_V, PIPE_MTE3, EVENT_ID0);
+  copy_ubuf_to_gm(((__gm__ float *)data_C), ((__ubuf__ float *)data_C_ub), 0, 1, 16, 0, 0);
+  pipe_barrier(PIPE_ALL);
+  pipe_barrier(PIPE_ALL);
+
+}
+
+// ccec -c -O2 /root/xkyin/TIK/nttTIK/kernel_meta/simple_add.cce --cce-aicore-arch=dav-m300 --cce-aicore-only -o ./kernel_meta/simple_add.o -mllvm -cce-aicore-function-stack-size=16000 -mllvm -cce-aicore-addr-transform -mllvm --cce-aicore-or-combine=false -mllvm -instcombine-code-sinking=false -Xclang -fcce-vf-vl=256 --cce-auto-sync=off -mllvm -cce-aicore-jump-expand=false -mllvm -cce-aicore-mask-opt=false
