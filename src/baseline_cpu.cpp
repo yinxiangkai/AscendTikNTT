@@ -5,7 +5,7 @@
 using namespace std;
 
 const int rangeSzie = 1<<20; //模数为p，数组长度限制为N
-const mpz_class prime("4179340454199820289");
+const mpz_class prime = 4179340454199820289;
 const mpz_class root = 1394649864822396625;
 const mpz_class iroot = 159035048546431000;
 
@@ -74,8 +74,8 @@ mpz_class * intt(mpz_class *data) {
       for(int k=0; k < m/2; k++){
         mpz_class u = data[k+j];
         mpz_class t = data[k+j+m/2]*g%prime;
-        data[k+j] = (u+t)/rangeSzie %prime;
-        data[k+j+m/2] = (u-t)/rangeSzie %prime;
+        data[k+j] = (u+t) %prime;
+        data[k+j+m/2] = (u-t) %prime;
       }
       g = g*gm % prime;
     }
@@ -99,22 +99,21 @@ int main() {
 
   mpz_class * data_c = new mpz_class[rangeSzie];
   for (int i = 0; i < rangeSzie; i++) {
-     data_c[i] =data_a[i]*data_b[i]%prime;
+     data_c[i] =(data_a[i]*data_b[i])%prime;
   }
   auto start = chrono::high_resolution_clock::now();
   
-  data_c=intt(data_c);
+  data_c = intt(data_c);
 
   auto end = chrono::high_resolution_clock::now();
-
+  
   chrono::duration<double, nano> elapsed = end - start;
 
   cout << "baseline_cpu " << elapsed.count() / 1000000
-       << " ms \n"; // 计算两次NTT的总时间，单位为纳秒
-
-  for(int i ;i<10;i++){
+       << " ms \n"; // 计算两次NTT的总时间，单位为纳秒 
+  
+  for(int i = 0;i<10;i++){
     cout << data_c[i]<<endl;
   }
-   
   return 0;
 }
