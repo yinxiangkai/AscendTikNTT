@@ -1,52 +1,57 @@
+import math
+import random
+from sympy import isprime
 import numpy as np
 
-# 定义参数
-N = 2**20  # 输入规模
-root = 3  # 原根
-mod = 4179340454199820289  # 模数
 
-# 计算逆元
-def mod_inverse(a, mod):
-    return pow(a, mod - 2, mod)
+def bit_reverse_copy(a, n):
+    result = [0] * n
+    for i in range(n):
+        rev_i = 0
+        for j in range(20):
+            rev_i<<=1
+            rev_i |= (i>>j)&1
+        result[rev_i] = a[i]
+    return result
 
-# 预计算幂
-def precompute_powers(n, root, mod):
-    powers = [1] * n
-    for i in range(1, n):
-        powers[i] = (powers[i-1] * root) % mod
-    return powers
+def modexp(a, b, mod):
+    res = 1
+    a = a % mod
+    while b > 0:
+        if b % 2 == 1:
+            res = (res * a) % mod
+        b = b >> 1
+        a = (a * a) % mod
+    return res
 
-# 计算NTT
-def ntt(a, n, root, mod):
-    a = np.array(a, dtype=np.int64)
-    j = 0
-    for i in range(1, n):
-        bit = n >> 1
-        while j >= bit:
-            j -= bit
-            bit >>= 1
-        j += bit
-        if i < j:
-            a[i], a[j] = a[j], a[i]
 
-    length = 2
-    while length <= n:
-        wlen = pow(root, n // length, mod)
-        for i in range(0, n, length):
+def ntt(a, n, mod, root):
+    a = bit_reverse_copy(a, n)
+    print("位逆序: ", a[:10])
+    for i in range(1, 20):
+        length=1<<i
+        wlen = modexp(root,  n// length, mod)
+        for j in range(0, n, length):
             w = 1
-            for j in range(length // 2):
-                u = a[i + j]
-                v = (a[i + j + length // 2] * w) % mod
-                a[i + j] = (u + v) % mod
-                a[i + j + length // 2] = (u - v) % mod
-                w = (w * wlen) % mod
-        length *= 2
+            for k in range(length // 2):
+                u = a[j+k]
+                v = a[j+k + length // 2] * w % mod
+                a[j+k] = (u + v) % mod
+                a[j+k + length // 2] = (u - v) % mod
+                w = w * wlen % mod
     return a
 
-# 示例输入数据
-data = [1] * N  # 用 1 填充的数据，仅作示例，可以替换为其他输入
 
-# 计算NTT
-ntt_result = ntt(data, N, root, mod)
-print("NTT 结果:", ntt_result[:10])  # 仅打印前10个结果
+# 示例调用
+M = 4179340454199820289  # 模数
+N = 1<<20  # 规模
+r = 1394649864822396625  # 原根
+a = [1]*N  # 示例多项式，规模为 N
+
+print("输入多项式: ", a[:10])  # 只打印前10个元素以免输出过长
+ntt_result = ntt(a, N, M, r)
+print("NTT变换结果: ", ntt_result[:10])  # 只打印前10个元素以免输出过长
+  # 只打印前10个元素以免输出过长
+
+
 

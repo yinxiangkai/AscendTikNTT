@@ -1,12 +1,11 @@
 {
   "version": "0.2.0",
   "configurations": [
-   
     {
       "name": "CMake Launch",
       "type": "lldb",
       "request": "launch",
-      "program": "${workspaceFolder}/out/${fileBasename}",
+      "program": "${workspaceFolder}/out/baseline_cpu",
       "args": [],
       "cwd": "${workspaceFolder}",
       "preLaunchTask": "build-project"

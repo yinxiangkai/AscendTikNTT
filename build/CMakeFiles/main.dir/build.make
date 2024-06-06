@@ -73,29 +73,29 @@ CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/xkyin/TIK/AscendTikNTT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/src/main.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/main.cpp.o -MF CMakeFiles/main.dir/src/main.cpp.o.d -o CMakeFiles/main.dir/src/main.cpp.o -c /root/xkyin/TIK/AscendTikNTT/src/main.cpp
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/main.cpp.o -MF CMakeFiles/main.dir/src/main.cpp.o.d -o CMakeFiles/main.dir/src/main.cpp.o -c /root/xkyin/TIK/AscendTikNTT/src/main.cpp
 
 CMakeFiles/main.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/main.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/xkyin/TIK/AscendTikNTT/src/main.cpp > CMakeFiles/main.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/xkyin/TIK/AscendTikNTT/src/main.cpp > CMakeFiles/main.dir/src/main.cpp.i
 
 CMakeFiles/main.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/main.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/xkyin/TIK/AscendTikNTT/src/main.cpp -o CMakeFiles/main.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/xkyin/TIK/AscendTikNTT/src/main.cpp -o CMakeFiles/main.dir/src/main.cpp.s
 
 CMakeFiles/main.dir/include/head.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/include/head.cpp.o: ../include/head.cpp
 CMakeFiles/main.dir/include/head.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/xkyin/TIK/AscendTikNTT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/include/head.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/include/head.cpp.o -MF CMakeFiles/main.dir/include/head.cpp.o.d -o CMakeFiles/main.dir/include/head.cpp.o -c /root/xkyin/TIK/AscendTikNTT/include/head.cpp
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/include/head.cpp.o -MF CMakeFiles/main.dir/include/head.cpp.o.d -o CMakeFiles/main.dir/include/head.cpp.o -c /root/xkyin/TIK/AscendTikNTT/include/head.cpp
 
 CMakeFiles/main.dir/include/head.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/include/head.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/xkyin/TIK/AscendTikNTT/include/head.cpp > CMakeFiles/main.dir/include/head.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/xkyin/TIK/AscendTikNTT/include/head.cpp > CMakeFiles/main.dir/include/head.cpp.i
 
 CMakeFiles/main.dir/include/head.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/include/head.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/xkyin/TIK/AscendTikNTT/include/head.cpp -o CMakeFiles/main.dir/include/head.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/xkyin/TIK/AscendTikNTT/include/head.cpp -o CMakeFiles/main.dir/include/head.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
