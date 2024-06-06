@@ -5,7 +5,7 @@
 using namespace std;
 
 const int rangeSzie = 1<<20; //模数为p，数组长度限制为N
-const mpz_class prime = 4179340454199820289;
+const mpz_class prime= 4179340454199820289;
 const mpz_class root = 1394649864822396625;
 const mpz_class iroot = 159035048546431000;
 
@@ -26,14 +26,11 @@ mpz_class * bitReverseCopy(const mpz_class * src){
 mpz_class modexp(mpz_class a, mpz_class b) {
 
     mpz_class res = 1;
-
     a = a % prime;  // 处理 a >= m 的情况
     while (b > 0) {
-        // 如果 b 是奇数，乘上当前的 a
         if (b % 2 == 1) {
             res = (res * a) % prime;
         }
-        // b 是偶数，平方 a
         a = (a * a) % prime;
         b /= 2;
     }
@@ -41,9 +38,7 @@ mpz_class modexp(mpz_class a, mpz_class b) {
 }
 
 mpz_class * ntt(mpz_class *data) {
-
   data = bitReverseCopy(data);
- 
   mpz_class gn = root;
   for(int i = 1; i < 20; i++){
     int m=1<<i;
@@ -51,12 +46,18 @@ mpz_class * ntt(mpz_class *data) {
     for(int j = 0; j < rangeSzie; j+=m){
       mpz_class g = 1;
       for(int k=0; k < m/2; k++){
-        mpz_class u = data[k+j];
-        mpz_class t = data[k+j+m/2]*g%prime;
+        mpz_class u = data[k+j]%prime;
+        mpz_class t = (data[k+j+m/2]*g)%prime;
         data[k+j] = (u+t) %prime;
-        data[k+j+m/2] = (u-t) %prime;
-      }
-      g = g*gm % prime;
+        data[k+j+m/2] = (u-t);
+        while(data[k+j+m/2]<0)
+        {
+          data[k+j+m/2] += prime;
+        }
+        data[k+j+m/2] = data[k+j+m/2] %prime;
+
+        g = g*gm % prime;
+      } 
     }
   }
 
@@ -72,12 +73,18 @@ mpz_class * intt(mpz_class *data) {
     for(int j = 0; j < rangeSzie; j+=m){
       mpz_class g = 1;
       for(int k=0; k < m/2; k++){
-        mpz_class u = data[k+j];
-        mpz_class t = data[k+j+m/2]*g%prime;
+        mpz_class u = data[k+j]%prime;
+        mpz_class t = (data[k+j+m/2]*g)%prime;
         data[k+j] = (u+t) %prime;
-        data[k+j+m/2] = (u-t) %prime;
+        data[k+j+m/2] = (u-t);
+        while(data[k+j+m/2]<0)
+        {
+          data[k+j+m/2] += prime;
+        }
+        data[k+j+m/2] = data[k+j+m/2] %prime;
+        g = g*gm % prime;
       }
-      g = g*gm % prime;
+    
     }
   }
 
@@ -87,12 +94,10 @@ mpz_class * intt(mpz_class *data) {
 int main() {
 
   mpz_class * data_a = new mpz_class[rangeSzie];
-  for (int i = 0; i < rangeSzie; i++) {
-     data_a[i] =2;
-  }
   mpz_class * data_b = new mpz_class[rangeSzie];
-  for (int i = 0; i < rangeSzie; i++) {
-     data_b[i] =i;
+  for (int i = 0; i < rangeSzie/2; i++) {
+     data_a[i] =1;
+     data_b[i] =1;
   }
   data_a=ntt(data_a);
   data_b=ntt(data_b);
@@ -113,7 +118,7 @@ int main() {
        << " ms \n"; // 计算两次NTT的总时间，单位为纳秒 
   
   for(int i = 0;i<10;i++){
-    cout << data_c[i]<<endl;
+    cout<<data_c[i]<<endl;
   }
   return 0;
 }

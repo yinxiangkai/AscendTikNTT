@@ -69,28 +69,28 @@ include CMakeFiles/baseline_cpu.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/baseline_cpu.dir/flags.make
 
-CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.o: CMakeFiles/baseline_cpu.dir/flags.make
-CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.o: ../src/baseline_cpu.cpp
-CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.o: CMakeFiles/baseline_cpu.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/xkyin/TIK/AscendTikNTT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.o -MF CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.o.d -o CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.o -c /root/xkyin/TIK/AscendTikNTT/src/baseline_cpu.cpp
+CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.o: CMakeFiles/baseline_cpu.dir/flags.make
+CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.o: ../benchmark/baseline_cpu.cpp
+CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.o: CMakeFiles/baseline_cpu.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/xkyin/TIK/AscendTikNTT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.o -MF CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.o.d -o CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.o -c /root/xkyin/TIK/AscendTikNTT/benchmark/baseline_cpu.cpp
 
-CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/xkyin/TIK/AscendTikNTT/src/baseline_cpu.cpp > CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.i
+CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/xkyin/TIK/AscendTikNTT/benchmark/baseline_cpu.cpp > CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.i
 
-CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/xkyin/TIK/AscendTikNTT/src/baseline_cpu.cpp -o CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.s
+CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/xkyin/TIK/AscendTikNTT/benchmark/baseline_cpu.cpp -o CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.s
 
 # Object files for target baseline_cpu
 baseline_cpu_OBJECTS = \
-"CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.o"
+"CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.o"
 
 # External object files for target baseline_cpu
 baseline_cpu_EXTERNAL_OBJECTS =
 
-../out/baseline_cpu: CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.o
+../out/baseline_cpu: CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.o
 ../out/baseline_cpu: CMakeFiles/baseline_cpu.dir/build.make
 ../out/baseline_cpu: CMakeFiles/baseline_cpu.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/xkyin/TIK/AscendTikNTT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../out/baseline_cpu"

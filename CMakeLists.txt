@@ -18,5 +18,5 @@ target_link_libraries(main  /usr/local/Ascend/ascend-toolkit/latest/aarch64-linu
                               /usr/local/Ascend/ascend-toolkit/latest/aarch64-linux/lib64/libmsprofiler.so)
 
 # baseline cpu
-add_executable(baseline_cpu src/baseline_cpu.cpp)
+add_executable(baseline_cpu benchmark/baseline_cpu.cpp)
 target_link_libraries(baseline_cpu gmp libgmpxx.so )

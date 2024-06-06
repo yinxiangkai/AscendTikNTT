@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/root/xkyin/TIK/AscendTikNTT/src/baseline_cpu.cpp" "CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.o" "gcc" "CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.o.d"
+  "/root/xkyin/TIK/AscendTikNTT/benchmark/baseline_cpu.cpp" "CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.o" "gcc" "CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.o.d"
   )
 
 # Targets to which this target links.

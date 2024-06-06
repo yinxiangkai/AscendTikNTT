@@ -1,5 +1,5 @@
-CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.o: \
- /root/xkyin/TIK/AscendTikNTT/src/baseline_cpu.cpp \
+CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.o: \
+ /root/xkyin/TIK/AscendTikNTT/benchmark/baseline_cpu.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/algorithm \
  /usr/include/c++/11/utility \
  /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \

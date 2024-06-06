@@ -142,6 +142,30 @@ baseline_cpu/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/baseline_cpu.dir/build.make CMakeFiles/baseline_cpu.dir/build
 .PHONY : baseline_cpu/fast
 
+benchmark/baseline_cpu.o: benchmark/baseline_cpu.cpp.o
+.PHONY : benchmark/baseline_cpu.o
+
+# target to build an object file
+benchmark/baseline_cpu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/baseline_cpu.dir/build.make CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.o
+.PHONY : benchmark/baseline_cpu.cpp.o
+
+benchmark/baseline_cpu.i: benchmark/baseline_cpu.cpp.i
+.PHONY : benchmark/baseline_cpu.i
+
+# target to preprocess a source file
+benchmark/baseline_cpu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/baseline_cpu.dir/build.make CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.i
+.PHONY : benchmark/baseline_cpu.cpp.i
+
+benchmark/baseline_cpu.s: benchmark/baseline_cpu.cpp.s
+.PHONY : benchmark/baseline_cpu.s
+
+# target to generate assembly for a file
+benchmark/baseline_cpu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/baseline_cpu.dir/build.make CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.s
+.PHONY : benchmark/baseline_cpu.cpp.s
+
 include/head.o: include/head.cpp.o
 .PHONY : include/head.o
 
@@ -165,30 +189,6 @@ include/head.s: include/head.cpp.s
 include/head.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/include/head.cpp.s
 .PHONY : include/head.cpp.s
-
-src/baseline_cpu.o: src/baseline_cpu.cpp.o
-.PHONY : src/baseline_cpu.o
-
-# target to build an object file
-src/baseline_cpu.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/baseline_cpu.dir/build.make CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.o
-.PHONY : src/baseline_cpu.cpp.o
-
-src/baseline_cpu.i: src/baseline_cpu.cpp.i
-.PHONY : src/baseline_cpu.i
-
-# target to preprocess a source file
-src/baseline_cpu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/baseline_cpu.dir/build.make CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.i
-.PHONY : src/baseline_cpu.cpp.i
-
-src/baseline_cpu.s: src/baseline_cpu.cpp.s
-.PHONY : src/baseline_cpu.s
-
-# target to generate assembly for a file
-src/baseline_cpu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/baseline_cpu.dir/build.make CMakeFiles/baseline_cpu.dir/src/baseline_cpu.cpp.s
-.PHONY : src/baseline_cpu.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -224,12 +224,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... baseline_cpu"
 	@echo "... main"
+	@echo "... benchmark/baseline_cpu.o"
+	@echo "... benchmark/baseline_cpu.i"
+	@echo "... benchmark/baseline_cpu.s"
 	@echo "... include/head.o"
 	@echo "... include/head.i"
 	@echo "... include/head.s"
-	@echo "... src/baseline_cpu.o"
-	@echo "... src/baseline_cpu.i"
-	@echo "... src/baseline_cpu.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

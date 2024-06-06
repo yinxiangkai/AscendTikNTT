@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/root/xkyin/TIK/AscendTikNTT/include
 
-CXX_FLAGS = -g
+CXX_FLAGS = 
 
