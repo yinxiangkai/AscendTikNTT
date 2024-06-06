@@ -29,7 +29,7 @@ mpz_class modexp(mpz_class a, mpz_class b) {
     a = a % prime;  // 处理 a >= m 的情况
     while (b > 0) {
         if (b % 2 == 1) {
-            res = (res * a) % prime;
+          res = (res * a) % prime;
         }
         a = (a * a) % prime;
         b /= 2;
@@ -40,7 +40,7 @@ mpz_class modexp(mpz_class a, mpz_class b) {
 mpz_class * ntt(mpz_class *data) {
   data = bitReverseCopy(data);
   mpz_class gn = root;
-  for(int i = 1; i < 20; i++){
+  for(int i = 1; i <= 20; i++){
     int m=1<<i;
     mpz_class gm = modexp(gn,rangeSzie/m);
     for(int j = 0; j < rangeSzie; j+=m){
@@ -67,7 +67,7 @@ mpz_class * ntt(mpz_class *data) {
 mpz_class * intt(mpz_class *data) {
   data = bitReverseCopy(data);
   mpz_class gn = iroot;
-  for(int i = 1; i < 20; i++){
+  for(int i = 1; i <= 20; i++){
     int m=1<<i;
     mpz_class gm = modexp(gn,rangeSzie/m);
     for(int j = 0; j < rangeSzie; j+=m){
@@ -75,7 +75,7 @@ mpz_class * intt(mpz_class *data) {
       for(int k=0; k < m/2; k++){
         mpz_class u = data[k+j]%prime;
         mpz_class t = (data[k+j+m/2]*g)%prime;
-        data[k+j] = (u+t) %prime;
+        data[k+j] = (u+t)%prime;
         data[k+j+m/2] = (u-t);
         while(data[k+j+m/2]<0)
         {
@@ -84,10 +84,12 @@ mpz_class * intt(mpz_class *data) {
         data[k+j+m/2] = data[k+j+m/2] %prime;
         g = g*gm % prime;
       }
-    
     }
   }
-
+  mpz_class inv_n = modexp(rangeSzie, prime - 2);
+  for (int i = 0; i < rangeSzie; i++) {
+    data[i] = (data[i] * inv_n) % prime;
+  }
   return data;
 }
 
@@ -96,20 +98,12 @@ int main() {
   mpz_class * data_a = new mpz_class[rangeSzie];
   mpz_class * data_b = new mpz_class[rangeSzie];
   for (int i = 0; i < rangeSzie/2; i++) {
-     data_a[i] =1;
-     data_b[i] =1;
+     data_a[i] = 1;
+     data_b[i] = 1;
   }
-  data_a=ntt(data_a);
-  data_b=ntt(data_b);
 
-  mpz_class * data_c = new mpz_class[rangeSzie];
-  for (int i = 0; i < rangeSzie; i++) {
-     data_c[i] =(data_a[i]*data_b[i])%prime;
-  }
   auto start = chrono::high_resolution_clock::now();
-  
-  data_c = intt(data_c);
-
+  data_a = ntt(data_a);
   auto end = chrono::high_resolution_clock::now();
   
   chrono::duration<double, nano> elapsed = end - start;
@@ -117,8 +111,31 @@ int main() {
   cout << "baseline_cpu " << elapsed.count() / 1000000
        << " ms \n"; // 计算两次NTT的总时间，单位为纳秒 
   
-  for(int i = 0;i<10;i++){
-    cout<<data_c[i]<<endl;
+  data_b = ntt(data_b);
+
+  mpz_class * data_c = new mpz_class[rangeSzie];
+  for (int i = 0; i < rangeSzie; i++) {
+     data_c[i] =(data_a[i]*data_b[i])%prime;
   }
+  data_c = intt(data_c);
+
+  cout<<"data_a: "<<"[";
+  for(int i = 0;i<10;i++){
+    cout<<data_a[i]<<", ";
+  }
+  cout<<"]"<<endl; 
+
+  cout<<"data_b: "<<"[";
+  for(int i = 0;i<10;i++){
+    cout<<data_b[i]<<", ";
+  }
+  cout<<"]"<<endl; 
+
+  cout<<"data_c: "<<"[";
+  for(int i = 0;i<10;i++){
+    cout<<data_c[i]<<", ";
+  }
+  cout<<"]"<<endl; 
+
   return 0;
 }
