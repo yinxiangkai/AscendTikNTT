@@ -5,9 +5,10 @@
 
 本项目是利用Ascend tik 实现NTT算法。
 
-- [ ] 实现矩阵乘法的NTT算法
-- [ ] 实现merge的NTT算法
-- [ ] 实现Four Step NTT 算法
+- [*] merge baseline
+- [ ] python实现矩阵乘法的NTT算法
+- [ ] TIK实现Four Step NTT 算法
+- [ ] 探索大数模乘：平方和、分治、RNS、蒙哥马利、巴列特模乘
 - [ ] 进行性能优化
 
 ## 矩阵乘法

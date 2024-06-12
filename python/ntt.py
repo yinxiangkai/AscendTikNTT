@@ -122,8 +122,6 @@ if __name__ == "__main__":
 
 
 
-
-
     for i in range(range_size):
         value = 0
         for j in range(group_size):
