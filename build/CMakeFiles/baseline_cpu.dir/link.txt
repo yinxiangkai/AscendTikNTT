@@ -1,1 +1,1 @@
-/usr/bin/c++ -rdynamic CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.o -o ../out/baseline_cpu  -lgmp -lgmpxx 
+/usr/bin/c++ -g -rdynamic CMakeFiles/baseline_cpu.dir/benchmark/baseline_cpu.cpp.o -o ../out/baseline_cpu  -lgmp -lgmpxx 

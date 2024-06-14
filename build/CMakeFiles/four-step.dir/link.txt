@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -rdynamic CMakeFiles/four-step.dir/test/four-step.cpp.o -o ../out/four-step  -lgmp -lgmpxx 

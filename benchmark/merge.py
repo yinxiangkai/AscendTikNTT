@@ -54,6 +54,7 @@ def intt(a, n, mod, root):
                 w = w * wlen % mod
         length *= 2
     inv_n = modexp(n, mod - 2, mod)
+    print(inv_n)
     return [(x * inv_n) % mod for x in a]
 
 # 示例调用
@@ -70,12 +71,19 @@ for i in range(N // 2):
     b[i] = 1
 
 ntt_a = ntt(a.copy(), N, M, r)
+
+matrix = np.ones((1024, 1024), dtype=int)
+for i in range(1024):
+    for j in range(1024):
+        matrix[i][j] =ntt_a[j+i*1024]
+
 ntt_b = ntt(b.copy(), N, M, r)
 
 for i in range(N):
     c[i] = ntt_a[i] * ntt_b[i] % M
 
 ntt_c = intt(c.copy(), N, M, i_r)
-print("A: ", ntt_a[:10])
-print("B: ", ntt_b[:10])
-print("C: ", ntt_c[:10])
+
+
+
+    

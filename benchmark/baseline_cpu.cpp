@@ -105,7 +105,10 @@ int main() {
   auto start = chrono::high_resolution_clock::now();
   data_a = ntt(data_a);
   auto end = chrono::high_resolution_clock::now();
-  
+  cout<<"data_a: "<<"[";
+  for(int i = 0;i<10;i++){
+    cout<<data_a[i]<<", ";
+  }
   chrono::duration<double, nano> elapsed = end - start;
 
   cout << "baseline_cpu " << elapsed.count() / 1000000
@@ -118,18 +121,6 @@ int main() {
      data_c[i] =(data_a[i]*data_b[i])%prime;
   }
   data_c = intt(data_c);
-
-  cout<<"data_a: "<<"[";
-  for(int i = 0;i<10;i++){
-    cout<<data_a[i]<<", ";
-  }
-  cout<<"]"<<endl; 
-
-  cout<<"data_b: "<<"[";
-  for(int i = 0;i<10;i++){
-    cout<<data_b[i]<<", ";
-  }
-  cout<<"]"<<endl; 
 
   cout<<"data_c: "<<"[";
   for(int i = 0;i<10;i++){

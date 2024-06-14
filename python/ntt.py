@@ -14,51 +14,48 @@ def get_platform_info(tbe_platform):
     L0C_SIZE = tbe_platform.get_soc_spec("L0C_SIZE")
     SMASK_SIZE = tbe_platform.get_soc_spec("SMASK_SIZE")
 
-    print("CORE_NUM:",blcok_num)
-    # 1
-    print("AICORE_TYPE:",AICORE_TYPE)
-    # aicore
-    print("UB_SIZE:",UB_SIZE>>10,"KB")
-    # 248
-    print("L2_SIZE:",L2_SIZE>>20,"MB")
-    # 4
-    print("L1_SIZE:",L1_SIZE>>20,"MB")
-    # 1
-    print("CUBE_SIZE:",CUBE_SIZE)
-    # 16 16 16
-    print("L0A_SIZE:",L0A_SIZE>>10,"KB")
-    # 64
-    print("L0B_SIZE:",L0B_SIZE>>10,"KB")
-    # 64
-    print("L0C_SIZE:",L0C_SIZE>>10,"KB")
-    # 128
+    print("CORE_NUM:",blcok_num)# 1
+    print("AICORE_TYPE:",AICORE_TYPE)# aicore
+    print("UB_SIZE:",UB_SIZE>>10,"KB") # 248
+    print("L2_SIZE:",L2_SIZE>>20,"MB")# 4
+    print("L1_SIZE:",L1_SIZE>>20,"MB")# 1
+    print("CUBE_SIZE:",CUBE_SIZE) # 16 16 16
+    print("L0A_SIZE:",L0A_SIZE>>10,"KB") # 64
+    print("L0B_SIZE:",L0B_SIZE>>10,"KB") # 64
+    print("L0C_SIZE:",L0C_SIZE>>10,"KB") # 128
     print("SMASK_SIZE:",SMASK_SIZE>>10,"KB")
-
-
     
         
-def ntt_compute():
+def col_ntt():
     tbe_platform.set_current_compile_soc_info("Ascend310B1")
-    # get_platform_info(tbe_platform)
     blcok_num=tbe_platform.get_soc_spec("CORE_NUM")
+    tik_instance = tik.Tik(disable_debug=False) 
+    group_size = tik_instance.InputScalar("int32", name="group_size")
+    matrix_size = tik_instance.InputScalar("int32", name="matrix_size")
 
-    tik_instance = tik.Tik(disable_debug=False)
-    range_size = tik_instance.InputScalar("int32",name="range_size")
-    bit_size = tik_instance.InputScalar("int32",name="bit_size")
-    group_size = tik_instance.InputScalar("int32",name="group_size")
-    data_input_gm = tik_instance.Tensor("int8", (group_size,range_size), name="data_input_gm", scope=tik.scope_gm)
-    power_table_gm = tik_instance.Tensor("int8", (group_size,range_size), name="power_table_gm", scope=tik.scope_gm)
-    prime_gm = tik_instance.Tensor("int8", (group_size,), name="prime_gm", scope=tik.scope_gm)
-    data_output_gm = tik_instance.Tensor("int8", (group_size,range_size), name="data_output_gm", scope=tik.scope_gm)
+    data_input_gm = tik_instance.Tensor("int8", [group_size,matrix_size,matrix_size], name="data_input_gm", scope=tik.scope_gm)
+    matrix_ntt_gm = tik_instance.Tensor("int8", [group_size,matrix_size,matrix_size], name="matrix_ntt_gm", scope=tik.scope_gm)
+    data_output_gm = tik_instance.Tensor("int32", [group_size,matrix_size,matrix_size], name="data_output_gm", scope=tik.scope_gm)
+
     
 
-    with tik_instance.for_range(0, group_size) as group_id:  
-        data_input_l1 = tik_instance.Tensor("int8", (range_size,), name="data_input_l1", scope=tik.scope_cbuf)
-        power_table_l1 = tik_instance.Tensor("int8", (range_size,), name="power_table_l1", scope=tik.scope_cbuf)
-        
+    
+    tik_instance.BuildCCE(kernel_name="",inputs=[data_input_gm,matrix_ntt_gm],outputs=[data_output_gm],flowtable=[matrix_size,group_size],config={"save_temp_cce_file": True})
+    return tik_instance
 
-            
+def factor():
+    tbe_platform.set_current_compile_soc_info("Ascend310B1")
+    blcok_num=tbe_platform.get_soc_spec("CORE_NUM")
+    tik_instance = tik.Tik(disable_debug=False) 
 
+
+    tik_instance.BuildCCE(kernel_name="",inputs=[data_input_gm,prime_gm,power_table_gm],outputs=[data_output_gm],flowtable=[range_size,bit_size,group_size],config={"save_temp_cce_file": True})
+    return tik_instance
+
+def row_ntt():
+    tbe_platform.set_current_compile_soc_info("Ascend310B1")
+    blcok_num=tbe_platform.get_soc_spec("CORE_NUM")
+    tik_instance = tik.Tik(disable_debug=False)
 
 
     tik_instance.BuildCCE(kernel_name="",inputs=[data_input_gm,prime_gm,power_table_gm],outputs=[data_output_gm],flowtable=[range_size,bit_size,group_size],config={"save_temp_cce_file": True})
