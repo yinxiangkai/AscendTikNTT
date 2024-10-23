@@ -1,0 +1,9 @@
+[info] [00000000]: write spr: name = PC, val = 0xfffff000
+[info] [00000000]: write spr: name = PC, val = 0xfffff000
+[info] [00000001]: write spr: name = PC, val = 0xfffff004
+[info] [00000002]: write spr: name = PC, val = 0xfffff000
+[info] [00000002]: write spr: name = PC, val = 0xfffff000
+[info] [00000003]: write spr: name = PC, val = 0xfffff004
+[info] [00000040]: write spr: name = PC, val = 0xfffff000
+[info] [00000040]: write spr: name = PC, val = 0xfffff000
+[info] [00000041]: write spr: name = PC, val = 0xfffff004

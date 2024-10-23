@@ -1,0 +1,24 @@
+[info] [00000000] (PC: 0xfffff000) MTE2     : (Binary: 0x71020108) (ID: 000000) MOV_OUT_TO_UB  Src:OUT, Dst:UB, XD:X1=0, XN:X0=0, XM:X2=0x100010, Id:0
+[info] [00000001] (PC: 0xfffff004) FLOWCTRL : (Binary: 0x41600000) (ID: 000001) END  
+[info] [00000002] (PC: 0xfffff000) MTE2     : (Binary: 0x71020108) (ID: 000002) MOV_OUT_TO_UB  Src:OUT, Dst:UB, XD:X1=0, XN:X0=0, XM:X2=0x100010, Id:2
+[info] [00000003] (PC: 0xfffff004) FLOWCTRL : (Binary: 0x41600000) (ID: 000003) END  
+[info] [00000006] (PC: 0xfffff00c) RVECEX   : (Binary: 0x80040055) (ID: 000005) RV_PSET Dtype: B8  Pd[0], #pattern=0, 
+[info] [00000007] (PC: 0xfffff010) RVECSU   : (Binary: 0xc0000017) (ID: 000006) RV_SEND  	dtype:U16, 
+[info] [00000010] (PC: 0xfffff00c) RVECLD   : (Binary: 0x01e80008) (ID: 000009) RV_VLD  Vd[0], Sn[93]=0x0, Am[0]=0x0, dist:NORAML, 
+[info] [00000011] (PC: 0xfffff010) RVECSU   : (Binary: 0xc0000017) (ID: 000010) RV_SEND  	dtype:U16, 
+[info] [00000014] (PC: 0xfffff00c) RVECLD   : (Binary: 0x03e80008) (ID: 000013) RV_VLD  Vd[1], Sn[93]=0x200, Am[0]=0x0, dist:NORAML, 
+[info] [00000015] (PC: 0xfffff010) RVECSU   : (Binary: 0xc0000017) (ID: 000014) RV_SEND  	dtype:U16, 
+[info] [00000018] (PC: 0xfffff00c) RVECEX   : (Binary: 0x80082380) (ID: 000017) RV_VADD Dtype: F32  Vd[0], Vn[0], Vm[1], Pg[0], 
+[info] [00000019] (PC: 0xfffff010) RVECSU   : (Binary: 0xc0000017) (ID: 000018) RV_SEND  	dtype:U16, 
+[info] [00000022] (PC: 0xfffff00c) RVECST   : (Binary: 0x41e80008) (ID: 000021) RV_VST  Vd[0], Sn[93]=0x400, Am[0]=0x0, Pg[0], dist:NORM_B32, 
+[info] [00000023] (PC: 0xfffff010) RVECSU   : (Binary: 0xc0000017) (ID: 000022) RV_SEND  	dtype:U16, 
+[info] [00000026] (PC: 0xfffff00c) RVECLD   : (Binary: 0x01e80008) (ID: 000025) RV_VLD  Vd[0], Sn[93]=0x100, Am[0]=0x0, dist:NORAML, 
+[info] [00000027] (PC: 0xfffff010) RVECSU   : (Binary: 0xc0000017) (ID: 000026) RV_SEND  	dtype:U16, 
+[info] [00000030] (PC: 0xfffff00c) RVECLD   : (Binary: 0x03e80008) (ID: 000029) RV_VLD  Vd[1], Sn[93]=0x300, Am[0]=0x0, dist:NORAML, 
+[info] [00000031] (PC: 0xfffff010) RVECSU   : (Binary: 0xc0000017) (ID: 000030) RV_SEND  	dtype:U16, 
+[info] [00000034] (PC: 0xfffff00c) RVECEX   : (Binary: 0x80082380) (ID: 000033) RV_VADD Dtype: F32  Vd[0], Vn[0], Vm[1], Pg[0], 
+[info] [00000035] (PC: 0xfffff010) RVECSU   : (Binary: 0xc0000017) (ID: 000034) RV_SEND  	dtype:U16, 
+[info] [00000038] (PC: 0xfffff00c) RVECST   : (Binary: 0x41e80008) (ID: 000037) RV_VST  Vd[0], Sn[93]=0x500, Am[0]=0x0, Pg[0], dist:NORM_B32, 
+[info] [00000039] (PC: 0xfffff010) RVECSU   : (Binary: 0xc0000017) (ID: 000038) RV_SEND  	dtype:U16, 
+[info] [00000040] (PC: 0xfffff000) MTE3     : (Binary: 0x70820110) (ID: 000040) MOV_UB_TO_OUT  Src:UB, Dst:OUT, XD:X1=0, XN:X0=0, XM:X2=0x100010, Id:40
+[info] [00000041] (PC: 0xfffff004) FLOWCTRL : (Binary: 0x41600000) (ID: 000041) END  

@@ -1,0 +1,3 @@
+[info] MOV_OUT_TO_UB: Xm burst_num = 1, burst_len = 512, burst = 16, src_gap = 0, dst_gap = 0, conv: 0, burst_unit: 0x20, result_unit: 0x20
+[info] MOV_OUT_TO_UB: Xm burst_num = 1, burst_len = 512, burst = 16, src_gap = 0, dst_gap = 0, conv: 0, burst_unit: 0x20, result_unit: 0x20
+[info] MOV_UB_TO_OUT: Xm burst_num = 1, burst_len = 512, burst = 16, src_gap = 0, dst_gap = 0, conv: 0, burst_unit: 0x20, result_unit: 0x20
