@@ -1,0 +1,18 @@
+{
+    "binFileName":"vec_trans_scatter",
+    "binFileSuffix":".o",
+    "blockDim":1,
+    "coreType":"AiCore",
+    "deterministic":"ignore",
+    "kernelName":"vec_trans_scatter__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "memoryStamping":[
+        0
+    ],
+    "opParaSize":0,
+    "parameters":[
+        null,
+        null
+    ],
+    "sha256":"604da54e68f9ecf8403da225a397eb0b8f935cd4d84d74e9ee78f7e864c463df"
+}

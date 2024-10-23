@@ -1,0 +1,35 @@
+{
+    "binFileName":"matrix_mul",
+    "binFileSuffix":".o",
+    "blockDim":1,
+    "coreType":"AiCore",
+    "deterministic":"ignore",
+    "kernelName":"matrix_mul__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "memoryStamping":[
+        0
+    ],
+    "opParaSize":0,
+    "parameters":[
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+    ],
+    "sha256":"59fcb7a87e636e4613ccd069dd4163b05f7ca6277e8a75f53315dbb0dbb84f87",
+    "workspace":{
+        "num":3,
+        "size":[
+            8192,
+            8192,
+            4096
+        ],
+        "type":[
+            0,
+            0,
+            0
+        ]
+    }
+}

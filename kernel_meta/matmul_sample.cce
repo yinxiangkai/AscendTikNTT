@@ -1,0 +1,123 @@
+#ifdef __CCE_KT_TEST__
+#define __aicore__ 
+#else
+#define __aicore__ [aicore]
+#endif
+
+extern "C" __global__ __aicore__ void matmul_sample__kernel0(__gm__ int8_t* __restrict__ matrix_a_gm, __gm__ int8_t* __restrict__ matrix_b_gm, __gm__ int32_t* __restrict__ matrix_c_gm) {
+set_padding(0);
+set_vector_mask((uint64_t)-1, (uint64_t)-1);
+__cbuf__   int8_t* matrix_a_l1 = (__cbuf__  int8_t *)get_imm(0);
+__cbuf__   int8_t* matrix_b_l1 = (__cbuf__  int8_t *)get_imm(65536);
+__cc__   int32_t* matrix_c_l0c = (__cc__  int32_t *)get_imm(0);
+__ubuf__   int8_t* src_ub = (__ubuf__  int8_t *)get_imm(0);
+__ubuf__   int8_t* k1nk0_ub = (__ubuf__  int8_t *)get_imm(1024);
+__cb__   int8_t* matrix_b_l1L0B_1 = (__cb__  int8_t *)get_imm(0);
+__ca__   int8_t* matrix_a_l1L0A_2 = (__ca__  int8_t *)get_imm(0);
+__cb__   int8_t* matrix_b_l1L0B_3 = (__cb__  int8_t *)get_imm(16384);
+__ca__   int8_t* matrix_a_l1L0A_4 = (__ca__  int8_t *)get_imm(16384);
+__ubuf__   int32_t* fixpipe_ub_tmp = (__ubuf__  int32_t *)get_imm(2048);
+// "aicore arch: Ascend310"
+  for (int32_t i = 0; i < 32; ++i) {
+    for (int32_t j = 0; j < 32; ++j) {
+      if ((j + i) != 0) {
+        wait_flag(PIPE_MTE1, PIPE_MTE2, EVENT_ID0);
+      }
+      for (int32_t k = 0; k < 64; ++k) {
+        copy_gm_to_cbuf(((__cbuf__ int8_t *)matrix_a_l1 + (k * 1024)), ((__gm__ int8_t *)matrix_a_gm + ((((int64_t)i) * (int64_t)65536) + (((int64_t)k) * (int64_t)32))), 0, 1, 32, (64 - k), 0, PAD_NONE);
+      }
+      for (int32_t i_0 = 0; i_0 < 64; ++i_0) {
+        if (0 < i_0) {
+          wait_flag(PIPE_V, PIPE_MTE2, EVENT_ID0);
+        }
+        copy_gm_to_ubuf(((__ubuf__ int8_t *)src_ub), ((__gm__ int8_t *)matrix_b_gm + ((((int64_t)i_0) * (int64_t)32768) + (((int64_t)j) * (int64_t)32))), 0, 32, 1, (64 - i_0), 0);
+        set_flag(PIPE_MTE2, PIPE_V, EVENT_ID0);
+        if (0 < i_0) {
+          wait_flag(PIPE_MTE3, PIPE_V, EVENT_ID0);
+        }
+        wait_flag(PIPE_MTE2, PIPE_V, EVENT_ID0);
+        uint64_t va_reg_array_1[8] = {((uint64_t)((__ubuf__ int8_t *)k1nk0_ub)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 32)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 64)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 96)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 128)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 160)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 192)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 224))};set_va_reg_sb(VA0, va_reg_array_1);
+        uint64_t va_reg_array_2[8] = {((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 256)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 288)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 320)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 352)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 384)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 416)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 448)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 480))};set_va_reg_sb(VA1, va_reg_array_2);
+        uint64_t va_reg_array_3[8] = {((uint64_t)((__ubuf__ int8_t *)src_ub)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 32)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 64)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 96)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 128)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 160)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 192)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 224))};set_va_reg_sb(VA2, va_reg_array_3);
+        uint64_t va_reg_array_4[8] = {((uint64_t)((__ubuf__ int8_t *)src_ub + 256)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 288)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 320)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 352)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 384)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 416)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 448)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 480))};set_va_reg_sb(VA3, va_reg_array_4);
+        scatter_vnchwconv_b8(VA0, VA2, (int64_t)72057594037927936, 0, 1);
+        uint64_t va_reg_array_5[8] = {((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 512)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 544)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 576)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 608)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 640)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 672)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 704)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 736))};set_va_reg_sb(VA0, va_reg_array_5);
+        uint64_t va_reg_array_6[8] = {((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 768)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 800)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 832)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 864)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 896)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 928)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 960)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 992))};set_va_reg_sb(VA1, va_reg_array_6);
+        uint64_t va_reg_array_7[8] = {((uint64_t)((__ubuf__ int8_t *)src_ub)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 32)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 64)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 96)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 128)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 160)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 192)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 224))};set_va_reg_sb(VA2, va_reg_array_7);
+        uint64_t va_reg_array_8[8] = {((uint64_t)((__ubuf__ int8_t *)src_ub + 256)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 288)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 320)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 352)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 384)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 416)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 448)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 480))};set_va_reg_sb(VA3, va_reg_array_8);
+        scatter_vnchwconv_b8(VA0, VA2, (int64_t)72057594037927936, 0, 0);
+        pipe_barrier(PIPE_V);
+        uint64_t va_reg_array_9[8] = {((uint64_t)((__ubuf__ int8_t *)k1nk0_ub)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 32)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 64)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 96)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 128)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 160)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 192)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 224))};set_va_reg_sb(VA0, va_reg_array_9);
+        uint64_t va_reg_array_10[8] = {((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 256)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 288)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 320)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 352)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 384)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 416)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 448)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 480))};set_va_reg_sb(VA1, va_reg_array_10);
+        uint64_t va_reg_array_11[8] = {((uint64_t)((__ubuf__ int8_t *)src_ub)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 64)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 128)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 192)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 256)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 320)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 384)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 448))};set_va_reg_sb(VA2, va_reg_array_11);
+        uint64_t va_reg_array_12[8] = {((uint64_t)((__ubuf__ int8_t *)src_ub + 512)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 576)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 640)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 704)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 768)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 832)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 896)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 960))};set_va_reg_sb(VA3, va_reg_array_12);
+        scatter_vnchwconv_b8(VA0, VA2, (int64_t)72057594037927936, 1, 1);
+        uint64_t va_reg_array_13[8] = {((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 512)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 544)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 576)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 608)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 640)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 672)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 704)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 736))};set_va_reg_sb(VA0, va_reg_array_13);
+        uint64_t va_reg_array_14[8] = {((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 768)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 800)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 832)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 864)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 896)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 928)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 960)), ((uint64_t)((__ubuf__ int8_t *)k1nk0_ub + 992))};set_va_reg_sb(VA1, va_reg_array_14);
+        uint64_t va_reg_array_15[8] = {((uint64_t)((__ubuf__ int8_t *)src_ub)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 64)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 128)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 192)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 256)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 320)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 384)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 448))};set_va_reg_sb(VA2, va_reg_array_15);
+        uint64_t va_reg_array_16[8] = {((uint64_t)((__ubuf__ int8_t *)src_ub + 512)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 576)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 640)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 704)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 768)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 832)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 896)), ((uint64_t)((__ubuf__ int8_t *)src_ub + 960))};set_va_reg_sb(VA3, va_reg_array_16);
+        scatter_vnchwconv_b8(VA0, VA2, (int64_t)72057594037927936, 1, 0);
+        set_flag(PIPE_V, PIPE_MTE3, EVENT_ID0);
+        if (i_0 < 63) {
+          set_flag(PIPE_V, PIPE_MTE2, EVENT_ID0);
+        }
+        wait_flag(PIPE_V, PIPE_MTE3, EVENT_ID0);
+        copy_ubuf_to_cbuf(((__cbuf__ int8_t *)matrix_b_l1 + (i_0 * 1024)), ((__ubuf__ int8_t *)k1nk0_ub), 0, 1, 32, 0, 0);
+        if (i_0 < 63) {
+          set_flag(PIPE_MTE3, PIPE_V, EVENT_ID0);
+        }
+      }
+      set_flag(PIPE_MTE3, PIPE_MTE1, EVENT_ID0);
+      wait_flag(PIPE_MTE3, PIPE_MTE1, EVENT_ID0);
+      for (int32_t i_1_for_5 = 0; i_1_for_5 < 2; ++i_1_for_5) {
+        if (0 < i_1_for_5) {
+          wait_flag(PIPE_M, PIPE_MTE1, EVENT_ID0);
+        }
+        load_cbuf_to_cb(((__cb__ int8_t *)matrix_b_l1L0B_1), ((__cbuf__ int8_t *)matrix_b_l1 + (i_1_for_5 * 32768)), 0, 32, 1, 0, 0);
+        for (int32_t i_4 = 0; i_4 < 2; ++i_4) {
+          load_cbuf_to_ca(((__ca__ int8_t *)matrix_a_l1L0A_2 + (i_4 * 8192)), ((__cbuf__ int8_t *)matrix_a_l1 + ((i_1_for_5 * 32768) + (i_4 * 512))), 0, 16, 2, 0, 0);
+        }
+        set_flag(PIPE_MTE1, PIPE_M, EVENT_ID0);
+        wait_flag(PIPE_MTE1, PIPE_M, EVENT_ID0);
+        if (i_1_for_5 == 0) {
+          pipe_barrier(PIPE_M);
+          mad(((__cc__ int32_t *)matrix_c_l0c), ((__ca__ int8_t *)matrix_a_l1L0A_2), ((__cb__ int8_t *)matrix_b_l1L0B_1), 32, 512, 32, 1);
+        } else {
+          pipe_barrier(PIPE_M);
+          mad(((__cc__ int32_t *)matrix_c_l0c), ((__ca__ int8_t *)matrix_a_l1L0A_2), ((__cb__ int8_t *)matrix_b_l1L0B_1), 32, 512, 32, 0);
+        }
+        if (i_1_for_5 < 1) {
+          set_flag(PIPE_M, PIPE_MTE1, EVENT_ID0);
+        }
+        if (0 < i_1_for_5) {
+          wait_flag(PIPE_M, PIPE_MTE1, EVENT_ID1);
+        }
+        load_cbuf_to_cb(((__cb__ int8_t *)matrix_b_l1L0B_3), ((__cbuf__ int8_t *)matrix_b_l1 + ((i_1_for_5 * 32768) + 16384)), 0, 32, 1, 0, 0);
+        for (int32_t i_41 = 0; i_41 < 2; ++i_41) {
+          load_cbuf_to_ca(((__ca__ int8_t *)matrix_a_l1L0A_4 + (i_41 * 8192)), ((__cbuf__ int8_t *)matrix_a_l1 + (((i_1_for_5 * 32768) + (i_41 * 512)) + 16384)), 0, 16, 2, 0, 0);
+        }
+        set_flag(PIPE_MTE1, PIPE_M, EVENT_ID0);
+        wait_flag(PIPE_MTE1, PIPE_M, EVENT_ID0);
+        pipe_barrier(PIPE_M);
+        mad(((__cc__ int32_t *)matrix_c_l0c), ((__ca__ int8_t *)matrix_a_l1L0A_4), ((__cb__ int8_t *)matrix_b_l1L0B_3), 32, 512, 32, 0);
+        if (i_1_for_5 < 1) {
+          set_flag(PIPE_M, PIPE_MTE1, EVENT_ID1);
+        }
+      }
+      if ((j + i) != 62) {
+        set_flag(PIPE_MTE1, PIPE_MTE2, EVENT_ID0);
+      }
+      set_flag(PIPE_M, PIPE_V, EVENT_ID0);
+      wait_flag(PIPE_M, PIPE_V, EVENT_ID0);
+      copy_matrix_cc_to_ubuf(((__ubuf__ int32_t *)fixpipe_ub_tmp), ((__cc__ int32_t *)matrix_c_l0c), 0, 2, 2, 0, 0, CRMODE_NONE);
+      set_flag(PIPE_V, PIPE_MTE3, EVENT_ID0);
+      wait_flag(PIPE_V, PIPE_MTE3, EVENT_ID0);
+      copy_ubuf_to_gm(((__gm__ int32_t *)matrix_c_gm + ((((int64_t)i) * (int64_t)32768) + (((int64_t)j) * (int64_t)32))), ((__ubuf__ int32_t *)fixpipe_ub_tmp), 0, 2, 64, 0, 0);
+    }
+  }
+  pipe_barrier(PIPE_ALL);
+  pipe_barrier(PIPE_ALL);
+
+}
+
+// ccec -c -O2 /root/xkyin/TIK/matmulTik/kernel_meta/matmul_sample.cce --cce-aicore-arch=dav-m100 --cce-aicore-only -o ./kernel_meta/matmul_sample.o --cce-auto-sync=off -mllvm -cce-aicore-jump-expand=false -mllvm -cce-aicore-mask-opt=false
