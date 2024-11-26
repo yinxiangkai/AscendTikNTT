@@ -1,6 +1,5 @@
 #include "help.h"
 
-
 int main() {  
   int deviceId = 0;
   aclrtContext context;
