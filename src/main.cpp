@@ -36,7 +36,6 @@ int main() {
   
   simpleAddKernel.launchKernel(args.data(), args.size() * sizeof(void *), NULL,
                                stream);
-
   aclrtRecordEvent(end_event, stream);
   aclrtSynchronizeStream(stream);
   float time = 0;
