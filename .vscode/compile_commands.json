@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/root/xkyin/tik/addTik",
-  "command": "/usr/bin/c++  -I/usr/local/Ascend/ascend-toolkit/latest/include  -o CMakeFiles/addACL.dir/addACL.cpp.o -c /root/xkyin/tik/addTik/addACL.cpp",
-  "file": "/root/xkyin/tik/addTik/addACL.cpp"
-}
-]
