@@ -5,8 +5,8 @@
 
 本项目主要是实现NTT在矩阵计算单元上的实现，为了验证算法的适用性，分别在Nvidia GPU，Ascend Atlas上进行了测试。
 主要是完成了如下功能：
-* 基于TensorCore的NTT算法实现。
-* 批量NTT算法实现
+* 提供了多种七种NTT实现。
+* 批量NTT算法实现。
 * 基于GPU的大数模约简方案。
 * 基于Ascend 的大整数拆分方案。
 * 基于Ascend 的NTT方案。
