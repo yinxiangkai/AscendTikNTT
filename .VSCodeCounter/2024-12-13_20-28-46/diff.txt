@@ -1,0 +1,249 @@
+Date : 2024-12-13 20:28:46
+Directory : /home/xkyin/Work/AscendTikNTT
+Total : 122 files,  2259 codes, 287 comments, 478 blanks, all 3024 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| CMake      |        108 |      1,380 |        287 |        389 |      2,056 |
+| Excel      |         11 |        504 |          0 |          3 |        507 |
+| CMakeCache |          3 |        375 |          0 |         86 |        461 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                              | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                 |        122 |      2,259 |        287 |        478 |      3,024 |
+| . (Files)                                                                                                         |          1 |        -15 |         -1 |         -7 |        -23 |
+| Ascend                                                                                                            |         14 |        585 |         40 |        161 |        786 |
+| Ascend (Files)                                                                                                    |          1 |         15 |          1 |          7 |         23 |
+| Ascend/build                                                                                                      |         13 |        570 |         39 |        154 |        763 |
+| Ascend/build (Files)                                                                                              |          2 |        343 |          7 |         75 |        425 |
+| Ascend/build/CMakeFiles                                                                                           |         11 |        227 |         32 |         79 |        338 |
+| Ascend/build/CMakeFiles (Files)                                                                                   |          2 |         43 |         12 |         11 |         66 |
+| Ascend/build/CMakeFiles/3.22.1                                                                                    |          3 |        127 |          2 |         44 |        173 |
+| Ascend/build/CMakeFiles/baseline_cpu.dir                                                                          |          2 |         18 |          6 |          8 |         32 |
+| Ascend/build/CMakeFiles/four-step.dir                                                                             |          2 |         18 |          6 |          8 |         32 |
+| Ascend/build/CMakeFiles/main.dir                                                                                  |          2 |         21 |          6 |          8 |         35 |
+| Cuda                                                                                                              |         94 |      2,259 |        287 |        478 |      3,024 |
+| Cuda (Files)                                                                                                      |          1 |         33 |          8 |         11 |         52 |
+| Cuda/benchmark                                                                                                    |          1 |         23 |          0 |         10 |         33 |
+| Cuda/build                                                                                                        |         70 |      1,637 |        259 |        419 |      2,315 |
+| Cuda/build (Files)                                                                                                |          2 |        416 |          7 |         96 |        519 |
+| Cuda/build/CMakeFiles                                                                                             |          7 |        348 |         14 |         66 |        428 |
+| Cuda/build/CMakeFiles (Files)                                                                                     |          2 |        171 |         12 |         11 |        194 |
+| Cuda/build/CMakeFiles/3.16.3                                                                                      |          5 |        177 |          2 |         55 |        234 |
+| Cuda/build/benchmark                                                                                              |         24 |        311 |         77 |         78 |        466 |
+| Cuda/build/benchmark (Files)                                                                                      |          1 |         27 |          6 |          7 |         40 |
+| Cuda/build/benchmark/CMakeFiles                                                                                   |         23 |        284 |         71 |         71 |        426 |
+| Cuda/build/benchmark/CMakeFiles (Files)                                                                           |          1 |          7 |          5 |          5 |         17 |
+| Cuda/build/benchmark/CMakeFiles/combine.dir                                                                       |          2 |         27 |          6 |          6 |         39 |
+| Cuda/build/benchmark/CMakeFiles/merge_time.dir                                                                    |          2 |         25 |          6 |          6 |         37 |
+| Cuda/build/benchmark/CMakeFiles/tensor_0_time.dir                                                                 |          2 |         25 |          6 |          6 |         37 |
+| Cuda/build/benchmark/CMakeFiles/tensor_1_time.dir                                                                 |          2 |         25 |          6 |          6 |         37 |
+| Cuda/build/benchmark/CMakeFiles/tensor_2_time.dir                                                                 |          2 |         25 |          6 |          6 |         37 |
+| Cuda/build/benchmark/CMakeFiles/tensor_3_time.dir                                                                 |          2 |         25 |          6 |          6 |         37 |
+| Cuda/build/benchmark/CMakeFiles/tensor_4_time.dir                                                                 |          2 |         25 |          6 |          6 |         37 |
+| Cuda/build/benchmark/CMakeFiles/tensor_5_time.dir                                                                 |          2 |         25 |          6 |          6 |         37 |
+| Cuda/build/benchmark/CMakeFiles/tensor_6_time.dir                                                                 |          2 |         25 |          6 |          6 |         37 |
+| Cuda/build/benchmark/CMakeFiles/tensor_7_time.dir                                                                 |          2 |         25 |          6 |          6 |         37 |
+| Cuda/build/benchmark/CMakeFiles/tensor_8_time.dir                                                                 |          2 |         25 |          6 |          6 |         37 |
+| Cuda/build/example                                                                                                |          8 |        109 |         29 |         30 |        168 |
+| Cuda/build/example (Files)                                                                                        |          1 |         27 |          6 |          7 |         40 |
+| Cuda/build/example/CMakeFiles                                                                                     |          7 |         82 |         23 |         23 |        128 |
+| Cuda/build/example/CMakeFiles (Files)                                                                             |          1 |          7 |          5 |          5 |         17 |
+| Cuda/build/example/CMakeFiles/merge_example.dir                                                                   |          2 |         25 |          6 |          6 |         37 |
+| Cuda/build/example/CMakeFiles/merge_ntt_cpu_example.dir                                                           |          2 |         25 |          6 |          6 |         37 |
+| Cuda/build/example/CMakeFiles/tensor_7_example.dir                                                                |          2 |         25 |          6 |          6 |         37 |
+| Cuda/build/source                                                                                                 |         29 |        453 |        132 |        149 |        734 |
+| Cuda/build/source (Files)                                                                                         |          1 |         32 |          7 |          9 |         48 |
+| Cuda/build/source/CMakeFiles                                                                                      |          1 |          7 |          5 |          5 |         17 |
+| Cuda/build/source/common                                                                                          |          9 |        132 |         40 |         45 |        217 |
+| Cuda/build/source/common (Files)                                                                                  |          1 |         31 |          7 |          9 |         47 |
+| Cuda/build/source/common/CMakeFiles                                                                               |          1 |          7 |          5 |          5 |         17 |
+| Cuda/build/source/common/include                                                                                  |          2 |         34 |         11 |         12 |         57 |
+| Cuda/build/source/common/include (Files)                                                                          |          1 |         27 |          6 |          7 |         40 |
+| Cuda/build/source/common/include/CMakeFiles                                                                       |          1 |          7 |          5 |          5 |         17 |
+| Cuda/build/source/common/lib                                                                                      |          5 |         60 |         17 |         19 |         96 |
+| Cuda/build/source/common/lib (Files)                                                                              |          1 |         27 |          6 |          7 |         40 |
+| Cuda/build/source/common/lib/CMakeFiles                                                                           |          4 |         33 |         11 |         12 |         56 |
+| Cuda/build/source/common/lib/CMakeFiles (Files)                                                                   |          1 |          7 |          5 |          5 |         17 |
+| Cuda/build/source/common/lib/CMakeFiles/common.dir                                                                |          3 |         26 |          6 |          7 |         39 |
+| Cuda/build/source/merge_ntt                                                                                       |          9 |        134 |         40 |         45 |        219 |
+| Cuda/build/source/merge_ntt (Files)                                                                               |          1 |         31 |          7 |          9 |         47 |
+| Cuda/build/source/merge_ntt/CMakeFiles                                                                            |          1 |          7 |          5 |          5 |         17 |
+| Cuda/build/source/merge_ntt/include                                                                               |          2 |         34 |         11 |         12 |         57 |
+| Cuda/build/source/merge_ntt/include (Files)                                                                       |          1 |         27 |          6 |          7 |         40 |
+| Cuda/build/source/merge_ntt/include/CMakeFiles                                                                    |          1 |          7 |          5 |          5 |         17 |
+| Cuda/build/source/merge_ntt/lib                                                                                   |          5 |         62 |         17 |         19 |         98 |
+| Cuda/build/source/merge_ntt/lib (Files)                                                                           |          1 |         27 |          6 |          7 |         40 |
+| Cuda/build/source/merge_ntt/lib/CMakeFiles                                                                        |          4 |         35 |         11 |         12 |         58 |
+| Cuda/build/source/merge_ntt/lib/CMakeFiles (Files)                                                                |          1 |          7 |          5 |          5 |         17 |
+| Cuda/build/source/merge_ntt/lib/CMakeFiles/merge_ntt.dir                                                          |          3 |         28 |          6 |          7 |         41 |
+| Cuda/build/source/tensor_ntt                                                                                      |          9 |        148 |         40 |         45 |        233 |
+| Cuda/build/source/tensor_ntt (Files)                                                                              |          1 |         31 |          7 |          9 |         47 |
+| Cuda/build/source/tensor_ntt/CMakeFiles                                                                           |          1 |          7 |          5 |          5 |         17 |
+| Cuda/build/source/tensor_ntt/include                                                                              |          2 |         34 |         11 |         12 |         57 |
+| Cuda/build/source/tensor_ntt/include (Files)                                                                      |          1 |         27 |          6 |          7 |         40 |
+| Cuda/build/source/tensor_ntt/include/CMakeFiles                                                                   |          1 |          7 |          5 |          5 |         17 |
+| Cuda/build/source/tensor_ntt/lib                                                                                  |          5 |         76 |         17 |         19 |        112 |
+| Cuda/build/source/tensor_ntt/lib (Files)                                                                          |          1 |         27 |          6 |          7 |         40 |
+| Cuda/build/source/tensor_ntt/lib/CMakeFiles                                                                       |          4 |         49 |         11 |         12 |         72 |
+| Cuda/build/source/tensor_ntt/lib/CMakeFiles (Files)                                                               |          1 |          7 |          5 |          5 |         17 |
+| Cuda/build/source/tensor_ntt/lib/CMakeFiles/tensor_ntt.dir                                                        |          3 |         42 |          6 |          7 |         55 |
+| Cuda/data                                                                                                         |         11 |        504 |          0 |          3 |        507 |
+| Cuda/example                                                                                                      |          1 |          8 |         20 |         13 |         41 |
+| Cuda/source                                                                                                       |         10 |         54 |          0 |         22 |         76 |
+| Cuda/source (Files)                                                                                               |          1 |          3 |          0 |          0 |          3 |
+| Cuda/source/common                                                                                                |          3 |         15 |          0 |          6 |         21 |
+| Cuda/source/common (Files)                                                                                        |          1 |          2 |          0 |          0 |          2 |
+| Cuda/source/common/include                                                                                        |          1 |          5 |          0 |          2 |          7 |
+| Cuda/source/common/lib                                                                                            |          1 |          8 |          0 |          4 |         12 |
+| Cuda/source/merge_ntt                                                                                             |          3 |         15 |          0 |          8 |         23 |
+| Cuda/source/merge_ntt (Files)                                                                                     |          1 |          2 |          0 |          0 |          2 |
+| Cuda/source/merge_ntt/include                                                                                     |          1 |          4 |          0 |          3 |          7 |
+| Cuda/source/merge_ntt/lib                                                                                         |          1 |          9 |          0 |          5 |         14 |
+| Cuda/source/tensor_ntt                                                                                            |          3 |         21 |          0 |          8 |         29 |
+| Cuda/source/tensor_ntt (Files)                                                                                    |          1 |          2 |          0 |          0 |          2 |
+| Cuda/source/tensor_ntt/include                                                                                    |          1 |          3 |          0 |          3 |          6 |
+| Cuda/source/tensor_ntt/lib                                                                                        |          1 |         16 |          0 |          5 |         21 |
+| build                                                                                                             |         13 |       -570 |        -39 |       -154 |       -763 |
+| build (Files)                                                                                                     |          2 |       -343 |         -7 |        -75 |       -425 |
+| build/CMakeFiles                                                                                                  |         11 |       -227 |        -32 |        -79 |       -338 |
+| build/CMakeFiles (Files)                                                                                          |          2 |        -43 |        -12 |        -11 |        -66 |
+| build/CMakeFiles/3.22.1                                                                                           |          3 |       -127 |         -2 |        -44 |       -173 |
+| build/CMakeFiles/baseline_cpu.dir                                                                                 |          2 |        -18 |         -6 |         -8 |        -32 |
+| build/CMakeFiles/four-step.dir                                                                                    |          2 |        -18 |         -6 |         -8 |        -32 |
+| build/CMakeFiles/main.dir                                                                                         |          2 |        -21 |         -6 |         -8 |        -35 |
++-------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                          | language   | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /home/xkyin/Work/AscendTikNTT/Ascend/CMakeLists.txt                                                               | CMake      |         15 |          1 |          7 |         23 |
+| /home/xkyin/Work/AscendTikNTT/Ascend/build/CMakeCache.txt                                                         | CMakeCache |        304 |          0 |         66 |        370 |
+| /home/xkyin/Work/AscendTikNTT/Ascend/build/CMakeFiles/3.22.1/CMakeCCompiler.cmake                                 | CMake      |         54 |          1 |         18 |         73 |
+| /home/xkyin/Work/AscendTikNTT/Ascend/build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake                               | CMake      |         63 |          1 |         20 |         84 |
+| /home/xkyin/Work/AscendTikNTT/Ascend/build/CMakeFiles/3.22.1/CMakeSystem.cmake                                    | CMake      |         10 |          0 |          6 |         16 |
+| /home/xkyin/Work/AscendTikNTT/Ascend/build/CMakeFiles/CMakeDirectoryInformation.cmake                             | CMake      |          7 |          5 |          5 |         17 |
+| /home/xkyin/Work/AscendTikNTT/Ascend/build/CMakeFiles/Makefile.cmake                                              | CMake      |         36 |          7 |          6 |         49 |
+| /home/xkyin/Work/AscendTikNTT/Ascend/build/CMakeFiles/baseline_cpu.dir/DependInfo.cmake                           | CMake      |          9 |          5 |          6 |         20 |
+| /home/xkyin/Work/AscendTikNTT/Ascend/build/CMakeFiles/baseline_cpu.dir/cmake_clean.cmake                          | CMake      |          9 |          1 |          2 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Ascend/build/CMakeFiles/four-step.dir/DependInfo.cmake                              | CMake      |          9 |          5 |          6 |         20 |
+| /home/xkyin/Work/AscendTikNTT/Ascend/build/CMakeFiles/four-step.dir/cmake_clean.cmake                             | CMake      |          9 |          1 |          2 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Ascend/build/CMakeFiles/main.dir/DependInfo.cmake                                   | CMake      |         10 |          5 |          6 |         21 |
+| /home/xkyin/Work/AscendTikNTT/Ascend/build/CMakeFiles/main.dir/cmake_clean.cmake                                  | CMake      |         11 |          1 |          2 |         14 |
+| /home/xkyin/Work/AscendTikNTT/Ascend/build/cmake_install.cmake                                                    | CMake      |         39 |          7 |          9 |         55 |
+| /home/xkyin/Work/AscendTikNTT/CMakeLists.txt                                                                      | CMake      |        -15 |         -1 |         -7 |        -23 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/CMakeLists.txt                                                                 | CMake      |         33 |          8 |         11 |         52 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/benchmark/CMakeLists.txt                                                       | CMake      |         23 |          0 |         10 |         33 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/CMakeCache.txt                                                           | CMakeCache |        375 |          0 |         86 |        461 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/CMakeFiles/3.16.3/CMakeASMCompiler.cmake                                 | CMake      |         14 |          0 |          5 |         19 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/CMakeFiles/3.16.3/CMakeCCompiler.cmake                                   | CMake      |         59 |          1 |         17 |         77 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/CMakeFiles/3.16.3/CMakeCUDACompiler.cmake                                | CMake      |         25 |          0 |          8 |         33 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/CMakeFiles/3.16.3/CMakeCXXCompiler.cmake                                 | CMake      |         69 |          1 |         19 |         89 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/CMakeFiles/3.16.3/CMakeSystem.cmake                                      | CMake      |         10 |          0 |          6 |         16 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/CMakeFiles/CMakeDirectoryInformation.cmake                               | CMake      |          7 |          5 |          5 |         17 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/CMakeFiles/Makefile.cmake                                                | CMake      |        164 |          7 |          6 |        177 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/CMakeDirectoryInformation.cmake                     | CMake      |          7 |          5 |          5 |         17 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/combine.dir/DependInfo.cmake                        | CMake      |         18 |          5 |          4 |         27 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/combine.dir/cmake_clean.cmake                       | CMake      |          9 |          1 |          2 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/merge_time.dir/DependInfo.cmake                     | CMake      |         16 |          5 |          4 |         25 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/merge_time.dir/cmake_clean.cmake                    | CMake      |          9 |          1 |          2 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/tensor_0_time.dir/DependInfo.cmake                  | CMake      |         16 |          5 |          4 |         25 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/tensor_0_time.dir/cmake_clean.cmake                 | CMake      |          9 |          1 |          2 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/tensor_1_time.dir/DependInfo.cmake                  | CMake      |         16 |          5 |          4 |         25 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/tensor_1_time.dir/cmake_clean.cmake                 | CMake      |          9 |          1 |          2 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/tensor_2_time.dir/DependInfo.cmake                  | CMake      |         16 |          5 |          4 |         25 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/tensor_2_time.dir/cmake_clean.cmake                 | CMake      |          9 |          1 |          2 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/tensor_3_time.dir/DependInfo.cmake                  | CMake      |         16 |          5 |          4 |         25 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/tensor_3_time.dir/cmake_clean.cmake                 | CMake      |          9 |          1 |          2 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/tensor_4_time.dir/DependInfo.cmake                  | CMake      |         16 |          5 |          4 |         25 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/tensor_4_time.dir/cmake_clean.cmake                 | CMake      |          9 |          1 |          2 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/tensor_5_time.dir/DependInfo.cmake                  | CMake      |         16 |          5 |          4 |         25 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/tensor_5_time.dir/cmake_clean.cmake                 | CMake      |          9 |          1 |          2 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/tensor_6_time.dir/DependInfo.cmake                  | CMake      |         16 |          5 |          4 |         25 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/tensor_6_time.dir/cmake_clean.cmake                 | CMake      |          9 |          1 |          2 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/tensor_7_time.dir/DependInfo.cmake                  | CMake      |         16 |          5 |          4 |         25 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/tensor_7_time.dir/cmake_clean.cmake                 | CMake      |          9 |          1 |          2 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/tensor_8_time.dir/DependInfo.cmake                  | CMake      |         16 |          5 |          4 |         25 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/CMakeFiles/tensor_8_time.dir/cmake_clean.cmake                 | CMake      |          9 |          1 |          2 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/benchmark/cmake_install.cmake                                            | CMake      |         27 |          6 |          7 |         40 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/cmake_install.cmake                                                      | CMake      |         41 |          7 |         10 |         58 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/example/CMakeFiles/CMakeDirectoryInformation.cmake                       | CMake      |          7 |          5 |          5 |         17 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/example/CMakeFiles/merge_example.dir/DependInfo.cmake                    | CMake      |         16 |          5 |          4 |         25 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/example/CMakeFiles/merge_example.dir/cmake_clean.cmake                   | CMake      |          9 |          1 |          2 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/example/CMakeFiles/merge_ntt_cpu_example.dir/DependInfo.cmake            | CMake      |         16 |          5 |          4 |         25 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/example/CMakeFiles/merge_ntt_cpu_example.dir/cmake_clean.cmake           | CMake      |          9 |          1 |          2 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/example/CMakeFiles/tensor_7_example.dir/DependInfo.cmake                 | CMake      |         16 |          5 |          4 |         25 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/example/CMakeFiles/tensor_7_example.dir/cmake_clean.cmake                | CMake      |          9 |          1 |          2 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/example/cmake_install.cmake                                              | CMake      |         27 |          6 |          7 |         40 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/CMakeFiles/CMakeDirectoryInformation.cmake                        | CMake      |          7 |          5 |          5 |         17 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/cmake_install.cmake                                               | CMake      |         32 |          7 |          9 |         48 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/common/CMakeFiles/CMakeDirectoryInformation.cmake                 | CMake      |          7 |          5 |          5 |         17 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/common/cmake_install.cmake                                        | CMake      |         31 |          7 |          9 |         47 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/common/include/CMakeFiles/CMakeDirectoryInformation.cmake         | CMake      |          7 |          5 |          5 |         17 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/common/include/cmake_install.cmake                                | CMake      |         27 |          6 |          7 |         40 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/common/lib/CMakeFiles/CMakeDirectoryInformation.cmake             | CMake      |          7 |          5 |          5 |         17 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/common/lib/CMakeFiles/common.dir/DependInfo.cmake                 | CMake      |         14 |          5 |          4 |         23 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/common/lib/CMakeFiles/common.dir/cmake_clean.cmake                | CMake      |          9 |          1 |          2 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/common/lib/CMakeFiles/common.dir/cmake_clean_target.cmake         | CMake      |          3 |          0 |          1 |          4 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/common/lib/cmake_install.cmake                                    | CMake      |         27 |          6 |          7 |         40 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/merge_ntt/CMakeFiles/CMakeDirectoryInformation.cmake              | CMake      |          7 |          5 |          5 |         17 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/merge_ntt/cmake_install.cmake                                     | CMake      |         31 |          7 |          9 |         47 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/merge_ntt/include/CMakeFiles/CMakeDirectoryInformation.cmake      | CMake      |          7 |          5 |          5 |         17 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/merge_ntt/include/cmake_install.cmake                             | CMake      |         27 |          6 |          7 |         40 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/merge_ntt/lib/CMakeFiles/CMakeDirectoryInformation.cmake          | CMake      |          7 |          5 |          5 |         17 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/merge_ntt/lib/CMakeFiles/merge_ntt.dir/DependInfo.cmake           | CMake      |         16 |          5 |          4 |         25 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/merge_ntt/lib/CMakeFiles/merge_ntt.dir/cmake_clean.cmake          | CMake      |          9 |          1 |          2 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/merge_ntt/lib/CMakeFiles/merge_ntt.dir/cmake_clean_target.cmake   | CMake      |          3 |          0 |          1 |          4 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/merge_ntt/lib/cmake_install.cmake                                 | CMake      |         27 |          6 |          7 |         40 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/tensor_ntt/CMakeFiles/CMakeDirectoryInformation.cmake             | CMake      |          7 |          5 |          5 |         17 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/tensor_ntt/cmake_install.cmake                                    | CMake      |         31 |          7 |          9 |         47 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/tensor_ntt/include/CMakeFiles/CMakeDirectoryInformation.cmake     | CMake      |          7 |          5 |          5 |         17 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/tensor_ntt/include/cmake_install.cmake                            | CMake      |         27 |          6 |          7 |         40 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/tensor_ntt/lib/CMakeFiles/CMakeDirectoryInformation.cmake         | CMake      |          7 |          5 |          5 |         17 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/tensor_ntt/lib/CMakeFiles/tensor_ntt.dir/DependInfo.cmake         | CMake      |         23 |          5 |          4 |         32 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/tensor_ntt/lib/CMakeFiles/tensor_ntt.dir/cmake_clean.cmake        | CMake      |         16 |          1 |          2 |         19 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/tensor_ntt/lib/CMakeFiles/tensor_ntt.dir/cmake_clean_target.cmake | CMake      |          3 |          0 |          1 |          4 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/build/source/tensor_ntt/lib/cmake_install.cmake                                | CMake      |         27 |          6 |          7 |         40 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/data/combine0time.xlsx                                                         | Excel      |         43 |          0 |          0 |         43 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/data/mergeTime.xlsx                                                            | Excel      |         40 |          0 |          1 |         41 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/data/tensor0time.xlsx                                                          | Excel      |         46 |          0 |          0 |         46 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/data/tensor1time.xlsx                                                          | Excel      |         47 |          0 |          0 |         47 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/data/tensor2time.xlsx                                                          | Excel      |         45 |          0 |          0 |         45 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/data/tensor3time.xlsx                                                          | Excel      |         38 |          0 |          1 |         39 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/data/tensor4time.xlsx                                                          | Excel      |         50 |          0 |          0 |         50 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/data/tensor5time.xlsx                                                          | Excel      |         51 |          0 |          1 |         52 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/data/tensor6time.xlsx                                                          | Excel      |         50 |          0 |          0 |         50 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/data/tensor7time.xlsx                                                          | Excel      |         44 |          0 |          0 |         44 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/data/tensor8time.xlsx                                                          | Excel      |         50 |          0 |          0 |         50 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/example/CMakeLists.txt                                                         | CMake      |          8 |         20 |         13 |         41 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/source/CMakeLists.txt                                                          | CMake      |          3 |          0 |          0 |          3 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/source/common/CMakeLists.txt                                                   | CMake      |          2 |          0 |          0 |          2 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/source/common/include/CMakeLists.txt                                           | CMake      |          5 |          0 |          2 |          7 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/source/common/lib/CMakeLists.txt                                               | CMake      |          8 |          0 |          4 |         12 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/source/merge_ntt/CMakeLists.txt                                                | CMake      |          2 |          0 |          0 |          2 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/source/merge_ntt/include/CMakeLists.txt                                        | CMake      |          4 |          0 |          3 |          7 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/source/merge_ntt/lib/CMakeLists.txt                                            | CMake      |          9 |          0 |          5 |         14 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/source/tensor_ntt/CMakeLists.txt                                               | CMake      |          2 |          0 |          0 |          2 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/source/tensor_ntt/include/CMakeLists.txt                                       | CMake      |          3 |          0 |          3 |          6 |
+| /home/xkyin/Work/AscendTikNTT/Cuda/source/tensor_ntt/lib/CMakeLists.txt                                           | CMake      |         16 |          0 |          5 |         21 |
+| /home/xkyin/Work/AscendTikNTT/build/CMakeCache.txt                                                                | CMakeCache |       -304 |          0 |        -66 |       -370 |
+| /home/xkyin/Work/AscendTikNTT/build/CMakeFiles/3.22.1/CMakeCCompiler.cmake                                        | CMake      |        -54 |         -1 |        -18 |        -73 |
+| /home/xkyin/Work/AscendTikNTT/build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake                                      | CMake      |        -63 |         -1 |        -20 |        -84 |
+| /home/xkyin/Work/AscendTikNTT/build/CMakeFiles/3.22.1/CMakeSystem.cmake                                           | CMake      |        -10 |          0 |         -6 |        -16 |
+| /home/xkyin/Work/AscendTikNTT/build/CMakeFiles/CMakeDirectoryInformation.cmake                                    | CMake      |         -7 |         -5 |         -5 |        -17 |
+| /home/xkyin/Work/AscendTikNTT/build/CMakeFiles/Makefile.cmake                                                     | CMake      |        -36 |         -7 |         -6 |        -49 |
+| /home/xkyin/Work/AscendTikNTT/build/CMakeFiles/baseline_cpu.dir/DependInfo.cmake                                  | CMake      |         -9 |         -5 |         -6 |        -20 |
+| /home/xkyin/Work/AscendTikNTT/build/CMakeFiles/baseline_cpu.dir/cmake_clean.cmake                                 | CMake      |         -9 |         -1 |         -2 |        -12 |
+| /home/xkyin/Work/AscendTikNTT/build/CMakeFiles/four-step.dir/DependInfo.cmake                                     | CMake      |         -9 |         -5 |         -6 |        -20 |
+| /home/xkyin/Work/AscendTikNTT/build/CMakeFiles/four-step.dir/cmake_clean.cmake                                    | CMake      |         -9 |         -1 |         -2 |        -12 |
+| /home/xkyin/Work/AscendTikNTT/build/CMakeFiles/main.dir/DependInfo.cmake                                          | CMake      |        -10 |         -5 |         -6 |        -21 |
+| /home/xkyin/Work/AscendTikNTT/build/CMakeFiles/main.dir/cmake_clean.cmake                                         | CMake      |        -11 |         -1 |         -2 |        -14 |
+| /home/xkyin/Work/AscendTikNTT/build/cmake_install.cmake                                                           | CMake      |        -39 |         -7 |         -9 |        -55 |
+| Total                                                                                                             |            |      2,259 |        287 |        478 |      3,024 |
++-------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

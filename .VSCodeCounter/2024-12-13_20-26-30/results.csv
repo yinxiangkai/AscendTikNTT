@@ -1,0 +1,16 @@
+"filename", "language", "CMake", "CMakeCache", "comment", "blank", "total"
+"/home/xkyin/Work/AscendTikNTT/CMakeLists.txt", "CMake", 15, 0, 1, 7, 23
+"/home/xkyin/Work/AscendTikNTT/build/CMakeCache.txt", "CMakeCache", 0, 304, 0, 66, 370
+"/home/xkyin/Work/AscendTikNTT/build/CMakeFiles/3.22.1/CMakeCCompiler.cmake", "CMake", 54, 0, 1, 18, 73
+"/home/xkyin/Work/AscendTikNTT/build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake", "CMake", 63, 0, 1, 20, 84
+"/home/xkyin/Work/AscendTikNTT/build/CMakeFiles/3.22.1/CMakeSystem.cmake", "CMake", 10, 0, 0, 6, 16
+"/home/xkyin/Work/AscendTikNTT/build/CMakeFiles/CMakeDirectoryInformation.cmake", "CMake", 7, 0, 5, 5, 17
+"/home/xkyin/Work/AscendTikNTT/build/CMakeFiles/Makefile.cmake", "CMake", 36, 0, 7, 6, 49
+"/home/xkyin/Work/AscendTikNTT/build/CMakeFiles/baseline_cpu.dir/DependInfo.cmake", "CMake", 9, 0, 5, 6, 20
+"/home/xkyin/Work/AscendTikNTT/build/CMakeFiles/baseline_cpu.dir/cmake_clean.cmake", "CMake", 9, 0, 1, 2, 12
+"/home/xkyin/Work/AscendTikNTT/build/CMakeFiles/four-step.dir/DependInfo.cmake", "CMake", 9, 0, 5, 6, 20
+"/home/xkyin/Work/AscendTikNTT/build/CMakeFiles/four-step.dir/cmake_clean.cmake", "CMake", 9, 0, 1, 2, 12
+"/home/xkyin/Work/AscendTikNTT/build/CMakeFiles/main.dir/DependInfo.cmake", "CMake", 10, 0, 5, 6, 21
+"/home/xkyin/Work/AscendTikNTT/build/CMakeFiles/main.dir/cmake_clean.cmake", "CMake", 11, 0, 1, 2, 14
+"/home/xkyin/Work/AscendTikNTT/build/cmake_install.cmake", "CMake", 39, 0, 7, 9, 55
+"Total", "-", 281, 304, 40, 161, 786
