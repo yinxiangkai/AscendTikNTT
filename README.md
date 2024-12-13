@@ -13,7 +13,7 @@
 
 ## 文档结构说明
 代码目录结构如下主要分为两部分，分别是cuda 的实现和Ascend的实现。
-
+```
 AscendTikNTT
 ├─ Ascend
 │  ├─ CMakeLists.txt
@@ -38,6 +38,7 @@ AscendTikNTT
 │     └─ tensor_ntt  
 ├─ License
 └─ README.md
+```
 
 ## 环境部署
 |环境|硬件|软件|
