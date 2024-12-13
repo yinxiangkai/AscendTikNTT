@@ -30,9 +30,6 @@ AscendTikNTT
 ├─ Cuda
 │  ├─ CMakeLists.txt
 │  ├─ benchmark
-│  ├─ bin
-│  ├─ build
-│  ├─ example
 │  ├─ run.sh
 │  └─ source
 │     ├─ CMakeLists.txt
@@ -47,6 +44,8 @@ AscendTikNTT
 | --------| ------------------| -----------|
 |Ascend|Atlas 200I DK A2|CANN23.0|
 |Nvidia|H100|Cuda 12.6|
+
+Ascend的环境配置参考：https://www.hiascend.com/document/detail/zh/Atlas200IDKA2DeveloperKit/23.0.RC2/qs/qs_0002.html
 
 ## 使用
 ### 1 编译
