@@ -1,0 +1,1 @@
+本程序的benchmnark代码参照https://github.com/Alisah-Ozcan/GPU-NTT进行一定的修改和扩展。

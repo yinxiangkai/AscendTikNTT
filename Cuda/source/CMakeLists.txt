@@ -1,0 +1,3 @@
+add_subdirectory(common)
+add_subdirectory(tensor_ntt)
+add_subdirectory(merge_ntt)
