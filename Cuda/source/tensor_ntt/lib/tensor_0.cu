@@ -147,37 +147,7 @@ __global__ void tensorCore_0(const uint64_t* input, uint64_t* output, const uint
     }
     auto shared_C = reinterpret_cast<int32_t(*)[2][WMMA_M * WMMA_N]>(shared_mem);
     // 数据处理
-    for (int frag_i = 0; frag_i < 8; ++frag_i)
-    {
-        // 将计算结果拼接。
-        uint64_t concate55[WORD_OUT / 4];
-        for (int j = 0; j < WORD_OUT / 4; ++j)
-        {
-            concate55[j] = c_frag[j * 4 + 0].x[frag_i];
-            concate55[j] += static_cast<uint64_t>(c_frag[j * 4 + 1].x[frag_i]) << 8;
-            concate55[j] += static_cast<uint64_t>(c_frag[j * 4 + 2].x[frag_i]) << 16;
-            concate55[j] += static_cast<uint64_t>(c_frag[j * 4 + 3].x[frag_i]) << 24;
-        }
-        // 整理到32位
-        uint32_t concate32[WORD_OUT / 4 + 1];
-        concate32[0] = concate55[0] & 0xFFFFFFFF;
-        for (int j = 1; j < WORD_OUT / 4; ++j)
-        {
-            concate55[j] += (concate55[j - 1] >> 32);
-            concate32[j] = concate55[j] & 0xFFFFFFFF;
-        }
-        concate32[WORD_OUT / 4] = concate55[WORD_OUT / 4 - 1] >> 32;
-        // 拼接成128位并取模
-        __uint128_t a = (__uint128_t)concate32[1] | ((__uint128_t)concate32[2] << 32) | ((__uint128_t)concate32[3] << 64) | ((__uint128_t)concate32[4] << 96);
-        a = Barrett64_gpu::reduction(a, modulus);
-        a = (a << 32) + concate32[0];
-        uint64_t temp = Barrett64_gpu::reduction(a, modulus);
-        c_frag[0].x[frag_i] = uint32_t(temp & 0xffffffff);
-        c_frag[1].x[frag_i] = uint32_t((temp >> 32) & 0xffffffff);
-        // 写回
-    }
-    wmma::store_matrix_sync(shared_C[warpId][0], c_frag[0], WMMA_N, wmma::mem_row_major);
-    wmma::store_matrix_sync(shared_C[warpId][1], c_frag[1], WMMA_N, wmma::mem_row_major);
+    
 
     for (int i = 0; i < FRAG_NUM; i++)
     {
