@@ -239,6 +239,7 @@ __host__ void GPU_NTT(uint64_t* input, uint64_t* output, uint64_t* rootUnityTabl
         default:
             std::cout << "Invalid log_nttSize" << std::endl;
             break;
+            //break;
     }
 }
 
