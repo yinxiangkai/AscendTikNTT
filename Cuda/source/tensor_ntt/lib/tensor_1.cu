@@ -43,8 +43,6 @@ __global__ void tensorCore_1(const uint64_t* input, uint64_t* output, const uint
     int scale = subNum * rowId;
     int factorIndex = ((blockId * warpNum + warpId) * WMMA_N + colId * FRAG_NUM) * scale;
 
-
-
     extern __shared__ uint64_t shared_mem[];
     auto shared_B = reinterpret_cast<uint8_t(*)[WORD_IN][WMMA_M * WMMA_K]>(shared_mem);
 
