@@ -214,11 +214,9 @@ __global__ void tensorCore_2(const uint64_t* input, uint64_t* output, const uint
 {
     int laneId = threadIdx.x;
     int warpId = threadIdx.y;
-
     int blockId = blockIdx.x;
     int subId = blockIdx.y;
     int batchId = blockIdx.z;
-
     int warpNum = blockDim.y;
     int blockNum = gridDim.x;
     int subNum = gridDim.y;
