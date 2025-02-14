@@ -72,8 +72,6 @@ __global__ void tensorCore_0(const uint64_t* input, uint64_t* output, const uint
         }
     }
     auto shared_C = reinterpret_cast<int32_t(*)[2][WMMA_M * WMMA_N]>(shared_mem);
-
-
 }
 __global__ void tensorCore_0(const uint64_t* input, uint64_t* output, const uint8_t* minorMatrix, Modulus modulus, int nttSize)
 {
