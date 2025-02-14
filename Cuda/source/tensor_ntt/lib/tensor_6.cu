@@ -31,10 +31,8 @@ __global__ void __launch_bounds__(1024)
     int blockId = blockIdx.x;
     int subId = blockIdx.y;
     int batchId = blockIdx.z;
-
     int log_subSize = log_nttSize - log_subNum;
     int log_rowSize = log_subSize - 5;
-
     int scale = gridDim.y;
     int lineId = laneId & 3;
     int c_rowId = (laneId >> 2);
