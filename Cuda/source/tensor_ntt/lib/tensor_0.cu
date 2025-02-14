@@ -145,7 +145,6 @@ __global__ void tensorCore_0(const uint64_t* input, uint64_t* output, const uint
     auto shared_C = reinterpret_cast<int32_t(*)[2][WMMA_M * WMMA_N]>(shared_mem);
     // 数据处理
     
-
     for (int i = 0; i < FRAG_NUM; i++)
     {
         uint64_t temp = shared_C[warpId][0][lineId * 16 + colId * 8 + i];
