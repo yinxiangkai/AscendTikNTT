@@ -30,10 +30,8 @@ __global__ void tensorCore_5A(int logStep, int log_nttSize, int log_subNum, cons
     int blockId = (blockIdx.x * blockDim.z + unitId);
     int subId = blockIdx.y;
     int batchId = blockIdx.z;
-
     int warpInRow = warpId >> 1;
     int warpInCol = warpId & 1;
-
     int log_subSize = log_nttSize - log_subNum;
     int log_rowSize = log_subSize - 5;
 
