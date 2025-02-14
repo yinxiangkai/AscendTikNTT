@@ -23,7 +23,6 @@ __global__ void tensorCore_0(const uint64_t* input, uint64_t* output, const uint
     int warpId = threadIdx.y;
     int subId = blockIdx.x;
     int nttId = blockIdx.y;
-
     int warpNum = blockDim.y;
     int subNum = gridDim.x;
     int rowSize = 16 * subNum * warpNum;
