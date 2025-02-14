@@ -72,10 +72,6 @@ if __name__ == "__main__":
     # matmul计算
     tik_instance.matmul(mn_output_l0c, mk_input_l0a, kn_input_l0b, m_size, k_size, n_size)
     tik_instance.fixpipe(mn_output_gm, mn_output_l0c, 2, 64, 0, 0, extend_params={"relu": False})   
-    
-
-    
-
 
     tik_instance.BuildCCE(kernel_name="matmul_sample", inputs=[mk_input_gm,kn_input_gm], outputs=[mn_output_gm], config={"save_temp_cce_file": True})
 
