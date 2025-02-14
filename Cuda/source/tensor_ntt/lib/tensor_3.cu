@@ -27,7 +27,6 @@ __global__ void tensorCore_3A(int logStep, int log_nttSize, const uint64_t* inpu
     int blockId = blockIdx.x;
     int subId = blockIdx.y;
     int batchId = blockIdx.z;
-
     int warpNum = blockDim.y;
     // int blockNum = gridDim.x;
     int subNum = gridDim.y;
