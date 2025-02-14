@@ -361,8 +361,6 @@ __global__ void tensorCore_1(int minorSize, const uint64_t* input, uint64_t* out
     }
 }
 
-
-
 __host__ void GPU_TensorNTT_1(uint64_t* input, uint64_t* output, const uint8_t* majorMatrix, const uint8_t* minorMatrix, uint64_t* factorTable, int log_nttSize, Modulus modulus,
                               int batchSize, int nttSize)
 {
