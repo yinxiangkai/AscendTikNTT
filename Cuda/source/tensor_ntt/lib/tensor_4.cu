@@ -28,21 +28,17 @@ __global__ void __launch_bounds__(512)
     int blockId = blockIdx.x;
     int subId = blockIdx.y;
     int batchId = blockIdx.z;
-
     int warpNum = blockDim.y;
     int blockNum = gridDim.x;
     int subNum = gridDim.y;
     // int unitId = blockId * warpNum + warpId;
-
     int blockStep = (blockNum * warpNum) << 1;
     int subSize = blockStep << 4;
     int scale = subNum;
-
     int factor_rowId = laneId & 0xf;
     int c_rowId = laneId >> 2;
     // int c_colId;
     int lineId = laneId & 3;
-
     int factor_colId;
 
     // 申请矩阵片段
