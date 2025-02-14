@@ -333,10 +333,8 @@ __global__ void tensorCore_2(int minorSize, const uint64_t* input, uint64_t* out
     int blockId = blockIdx.x;
     int subId = blockIdx.y;
     int batchId = blockIdx.z;
-
     int warpNum = blockDim.y;
     int blockNum = gridDim.x;
-
     int tileNum = COL_SIZE / minorSize;
     int tileSize = minorSize * COL_SIZE;
     int warpSize = tileNum * tileSize;
