@@ -87,10 +87,8 @@ __global__ void tensorCore_0(const uint64_t* input, uint64_t* output, const uint
     int minorSize = subNum * warpNum * 16;
     int matrixSize = minorSize * minorSize;
     int tileSize = warpNum * 256;
-
     int colId = laneId / 16;
     int lineId = laneId % 16;
-
     int rowIndex = 16 * (subId * warpNum + warpId) + lineId;
     int sharedIndex = lineId * 16 + colId * 8;
     int inputIndex = nttId * nttSize + warpId * 256 + sharedIndex;
