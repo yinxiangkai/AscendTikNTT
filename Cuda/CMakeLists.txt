@@ -1,12 +1,9 @@
 cmake_minimum_required(VERSION 3.12)
 project(TensorNTT VERSION 1.0 LANGUAGES C CXX CUDA ASM)
-
 # 设置CMake的策略
 if(POLICY CMP0104)
   cmake_policy(SET CMP0104 NEW)  
 endif()
-
-
 set(CMAKE_CUDA_ARCHITECTURES "90")
 # 设置编译选项
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
