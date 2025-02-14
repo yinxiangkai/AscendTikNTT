@@ -11,7 +11,6 @@ set(LIB_SOURCE_FILES
 )
 
 add_library(tensor_ntt STATIC ${LIB_SOURCE_FILES})
-
 target_link_libraries(tensor_ntt PUBLIC common)
 
 set_target_properties(tensor_ntt PROPERTIES
