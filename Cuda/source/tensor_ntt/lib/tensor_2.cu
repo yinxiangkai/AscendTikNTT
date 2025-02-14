@@ -28,11 +28,9 @@ __global__ void tensorCore_2(int flag, const uint64_t* input, uint64_t* output, 
     int blockId = blockIdx.x;
     int subId = blockIdx.y;
     int batchId = blockIdx.z;
-
     int warpNum = blockDim.y;
     int blockNum = gridDim.x;
     int subNum = gridDim.y;
-
     int colId = laneId / COL_SIZE;
     int rowId = laneId % COL_SIZE;
     int blockStep = blockNum * warpNum;
